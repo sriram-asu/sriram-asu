@@ -1,0 +1,702 @@
+[
+ {
+   "definition": "In this task, based on a given sentence, we ask you to write a question that involves \\\"transient vs. stationary\\\" events, i.e., the understanding of whether an event will change over time(transient event) or not(stationary event). For example, the sentence \\\"he was born in the U.S.\\\" contains a stationary event since it will last forever; however, \\\"he is hungry\\\" contains a transient event since it will remain true for a short period of time. \\nThings to avoid: Don't create questions which have explicit mentions of answers in text. Instead, it has to be implied from what is given. In other words, we want you to use \\\"instinct\\\" or \\\"common sense\\\".\\nEmphasis & Caution: The written questions are not required to have a single correct answer.",
+   "instances": "Sentence: Islam later emerged as the majority religion during the centuries of Ottoman rule, though a significant Christian minority remained.",
+   "accuracy": 0.9,
+   "task in allenai dataset": "task006_mctaco_question_generation_transient_stationary.json",
+   "id": "ID1"
+ },
+ {
+   "definition": "In this task, based on a given sentence, we ask you to write a question that involves \\\"transient vs. stationary\\\" events, i.e., the understanding of whether an event will change over time(transient event) or not(stationary event). For example, the sentence \\\"he was born in the U.S.\\\" contains a stationary event since it will last forever; however, \\\"he is hungry\\\" contains a transient event since it will remain true for a short period of time. \\nThings to avoid: Don't create questions which have explicit mentions of answers in text. Instead, it has to be implied from what is given. In other words, we want you to use \\\"instinct\\\" or \\\"common sense\\\".\\nEmphasis & Caution: The written questions are not required to have a single correct answer.",
+   "instances": "Sentence: His counter-attack with Dayak warriors drove the Chinese out of Bau and across the Sarawak border.",
+   "accuracy": 0.8,
+   "task in allenai dataset": "",
+   "id": "ID1"
+ },
+ {
+   "definition": "In this task, based on a given sentence, we ask you to write a question that involves \\\"transient vs. stationary\\\" events, i.e., the understanding of whether an event will change over time(transient event) or not(stationary event). For example, the sentence \\\"he was born in the U.S.\\\" contains a stationary event since it will last forever; however, \\\"he is hungry\\\" contains a transient event since it will remain true for a short period of time. \\nThings to avoid: Don't create questions which have explicit mentions of answers in text. Instead, it has to be implied from what is given. In other words, we want you to use \\\"instinct\\\" or \\\"common sense\\\".\\nEmphasis & Caution: The written questions are not required to have a single correct answer.",
+   "instances": "Sentence: But he told us that he could not drum up much interest in or money for such a purpose from Washington, partly, he thought, because these countries had dictatorial governments.",
+   "accuracy": 0.7,
+   "task in allenai dataset": "",
+   "id": "ID1"
+ },
+ {
+   "definition": "In this task, based on a given sentence, we ask you to write a question that involves \\\"transient vs. stationary\\\" events, i.e., the understanding of whether an event will change over time(transient event) or not(stationary event). For example, the sentence \\\"he was born in the U.S.\\\" contains a stationary event since it will last forever; however, \\\"he is hungry\\\" contains a transient event since it will remain true for a short period of time. \\nThings to avoid: Don't create questions which have explicit mentions of answers in text. Instead, it has to be implied from what is given. In other words, we want you to use \\\"instinct\\\" or \\\"common sense\\\".\\nEmphasis & Caution: The written questions are not required to have a single correct answer.",
+   "instances": "Sentence: At least some FAA officials in Boston Center and the New England Region knew that a hijacker on board American 11 had said \\\"we have some planes.",
+   "accuracy": 0.75,
+   "task in allenai dataset": "",
+   "id": "ID1"
+ },
+ {
+   "definition": "In this task, based on a given sentence, we ask you to write a question that involves \\\"transient vs. stationary\\\" events, i.e., the understanding of whether an event will change over time(transient event) or not(stationary event). For example, the sentence \\\"he was born in the U.S.\\\" contains a stationary event since it will last forever; however, \\\"he is hungry\\\" contains a transient event since it will remain true for a short period of time. \\nThings to avoid: Don't create questions which have explicit mentions of answers in text. Instead, it has to be implied from what is given. In other words, we want you to use \\\"instinct\\\" or \\\"common sense\\\".\\nEmphasis & Caution: The written questions are not required to have a single correct answer.",
+   "instances": "Sentence: Joe did and after he got a bandage on his arm, he and his father rode in the field on the tractor.",
+   "accuracy": 0.66,
+   "task in allenai dataset": "",
+   "id": "ID1"
+ },
+ {
+   "definition": "In this task, based on a given sentence, we ask you to write a question that involves \\\"transient vs. stationary\\\" events, i.e., the understanding of whether an event will change over time(transient event) or not(stationary event). For example, the sentence \\\"he was born in the U.S.\\\" contains a stationary event since it will last forever; however, \\\"he is hungry\\\" contains a transient event since it will remain true for a short period of time. \\nThings to avoid: Don't create questions which have explicit mentions of answers in text. Instead, it has to be implied from what is given. In other words, we want you to use \\\"instinct\\\" or \\\"common sense\\\".\\nEmphasis & Caution: The written questions are not required to have a single correct answer.",
+   "instances": "Sentence: Some government officials were concerned that terrorists would take advantage of such breakdowns.",
+   "accuracy": 0.88,
+   "task in allenai dataset": "",
+   "id": "ID1"
+ },
+ {
+   "definition": "In this task, based on a given sentence, we ask you to write a question that involves \\\"transient vs. stationary\\\" events, i.e., the understanding of whether an event will change over time(transient event) or not(stationary event). For example, the sentence \\\"he was born in the U.S.\\\" contains a stationary event since it will last forever; however, \\\"he is hungry\\\" contains a transient event since it will remain true for a short period of time. \\nThings to avoid: Don't create questions which have explicit mentions of answers in text. Instead, it has to be implied from what is given. In other words, we want you to use \\\"instinct\\\" or \\\"common sense\\\".\\nEmphasis & Caution: The written questions are not required to have a single correct answer.",
+   "instances": "Sentence: Pushkin gradually became committed to social reform and emerged as a spokesman for literary radicals.",
+   "accuracy": 0.33,
+   "task in allenai dataset": "",
+   "id": "ID1"
+ },
+ {
+   "definition": "In this task, based on a given sentence, we ask you to write a question that involves \\\"transient vs. stationary\\\" events, i.e., the understanding of whether an event will change over time(transient event) or not(stationary event). For example, the sentence \\\"he was born in the U.S.\\\" contains a stationary event since it will last forever; however, \\\"he is hungry\\\" contains a transient event since it will remain true for a short period of time. \\nThings to avoid: Don't create questions which have explicit mentions of answers in text. Instead, it has to be implied from what is given. In other words, we want you to use \\\"instinct\\\" or \\\"common sense\\\".\\nEmphasis & Caution: The written questions are not required to have a single correct answer.",
+   "instances": "Sentence: He was asked to lend his support by writing a letter, with Szilard, to President Roosevelt, recommending the U.S. pay attention and engage in its own nuclear weapons research.",
+   "accuracy": 0.27,
+   "task in allenai dataset": "",
+   "id": "ID1"
+ },
+ {
+   "definition": "In this task, based on a given sentence, we ask you to write a question that involves \\\"transient vs. stationary\\\" events, i.e., the understanding of whether an event will change over time(transient event) or not(stationary event). For example, the sentence \\\"he was born in the U.S.\\\" contains a stationary event since it will last forever; however, \\\"he is hungry\\\" contains a transient event since it will remain true for a short period of time. \\nThings to avoid: Don't create questions which have explicit mentions of answers in text. Instead, it has to be implied from what is given. In other words, we want you to use \\\"instinct\\\" or \\\"common sense\\\".\\nEmphasis & Caution: The written questions are not required to have a single correct answer.",
+   "instances": "Sentence: The properties of matter depend on the types of atoms that matter is made of.",
+   "accuracy": 0.78,
+   "task in allenai dataset": "",
+   "id": "ID1"
+ },
+ {
+   "definition": "In this task, based on a given sentence, we ask you to write a question that involves \\\"transient vs. stationary\\\" events, i.e., the understanding of whether an event will change over time(transient event) or not(stationary event). For example, the sentence \\\"he was born in the U.S.\\\" contains a stationary event since it will last forever; however, \\\"he is hungry\\\" contains a transient event since it will remain true for a short period of time. \\nThings to avoid: Don't create questions which have explicit mentions of answers in text. Instead, it has to be implied from what is given. In other words, we want you to use \\\"instinct\\\" or \\\"common sense\\\".\\nEmphasis & Caution: The written questions are not required to have a single correct answer.",
+   "instances": "Sentence: Partial lunar eclipses occur at least twice a year, but total lunar eclipses are less common.",
+   "accuracy": 0.56,
+   "task in allenai dataset": "",
+   "id": "ID1"
+ },
+ {
+   "definition": "In this task, based on a given sentence, we ask you to write a question that involves ordering of event , i.e., the understanding of how events are usually ordered. For example, \\\"earning money\\\" usually appears before \\\"spending money\\\".\\nThings to avoid: Don't create questions which have explicit mentions of answers in text. Instead, it has to be implied from what is given. In other words, we want you to use \\\"instinct\\\" or \\\"common sense\\\".\\nEmphasis & Caution: The written questions are not required to have a single correct answer.",
+   "instances": "Sentence: It's hail crackled across the comm, and Tara spun to retake her seat at the helm.",
+   "accuracy": 0.65,
+   "task in allenai dataset": "task009_mctaco_question_generation_event_ordering.json",
+   "id": "ID2"
+ },
+ {
+   "definition": "In this task, based on a given sentence, we ask you to write a question that involves ordering of event , i.e., the understanding of how events are usually ordered. For example, \\\"earning money\\\" usually appears before \\\"spending money\\\".\\nThings to avoid: Don't create questions which have explicit mentions of answers in text. Instead, it has to be implied from what is given. In other words, we want you to use \\\"instinct\\\" or \\\"common sense\\\".\\nEmphasis & Caution: The written questions are not required to have a single correct answer.",
+   "instances": "Sentence: Still , Preetam vows to marry Nandini if she meets him again",
+   "accuracy": 0.44,
+   "task in allenai dataset": "",
+   "id": "ID2"
+ },
+ {
+   "definition": "In this task, based on a given sentence, we ask you to write a question that involves ordering of event , i.e., the understanding of how events are usually ordered. For example, \\\"earning money\\\" usually appears before \\\"spending money\\\".\\nThings to avoid: Don't create questions which have explicit mentions of answers in text. Instead, it has to be implied from what is given. In other words, we want you to use \\\"instinct\\\" or \\\"common sense\\\".\\nEmphasis & Caution: The written questions are not required to have a single correct answer.",
+   "instances": "Sentence: Max and Joey would often run through fields in a game of chase.",
+   "accuracy": 0.92,
+   "task in allenai dataset": "",
+   "id": "ID2"
+ },
+ {
+   "definition": "In this task, based on a given sentence, we ask you to write a question that involves ordering of event , i.e., the understanding of how events are usually ordered. For example, \\\"earning money\\\" usually appears before \\\"spending money\\\".\\nThings to avoid: Don't create questions which have explicit mentions of answers in text. Instead, it has to be implied from what is given. In other words, we want you to use \\\"instinct\\\" or \\\"common sense\\\".\\nEmphasis & Caution: The written questions are not required to have a single correct answer.",
+   "instances": "Sentence: Carl Laemmle, head of Universal Studios, gave Einstein a tour of his studio and introduced him to Chaplin.",
+   "accuracy": 0.23,
+   "task in allenai dataset": "",
+   "id": "ID2"
+ },
+ {
+   "definition": "In this task, based on a given sentence, we ask you to write a question that involves ordering of event , i.e., the understanding of how events are usually ordered. For example, \\\"earning money\\\" usually appears before \\\"spending money\\\".\\nThings to avoid: Don't create questions which have explicit mentions of answers in text. Instead, it has to be implied from what is given. In other words, we want you to use \\\"instinct\\\" or \\\"common sense\\\".\\nEmphasis & Caution: The written questions are not required to have a single correct answer.",
+   "instances": "Sentence: His counter-attack with Dayak warriors drove the Chinese out of Bau and across the Sarawak border.",
+   "accuracy": 0.18,
+   "task in allenai dataset": "",
+   "id": "ID2"
+ },
+ {
+   "definition": "In this task, based on a given sentence, we ask you to write a question that involves ordering of event , i.e., the understanding of how events are usually ordered. For example, \\\"earning money\\\" usually appears before \\\"spending money\\\".\\nThings to avoid: Don't create questions which have explicit mentions of answers in text. Instead, it has to be implied from what is given. In other words, we want you to use \\\"instinct\\\" or \\\"common sense\\\".\\nEmphasis & Caution: The written questions are not required to have a single correct answer.",
+   "instances": "Sentence: About 30% of Ratners's profit already is derived from the U.S.",
+   "accuracy": 0.18,
+   "task in allenai dataset": "",
+   "id": "ID2"
+ },
+ {
+   "definition": "In this task, based on a given sentence, we ask you to write a question that involves ordering of event , i.e., the understanding of how events are usually ordered. For example, \\\"earning money\\\" usually appears before \\\"spending money\\\".\\nThings to avoid: Don't create questions which have explicit mentions of answers in text. Instead, it has to be implied from what is given. In other words, we want you to use \\\"instinct\\\" or \\\"common sense\\\".\\nEmphasis & Caution: The written questions are not required to have a single correct answer.",
+   "instances": "Sentence: Lennon accuses his father of leaving him again , and then leaves , after telling his father that he wo n't live with him anymore ",
+   "accuracy": 0.54,
+   "task in allenai dataset": "",
+   "id": "ID2"
+ },
+ {
+   "definition": "In this task, based on a given sentence, we ask you to write a question that involves ordering of event , i.e., the understanding of how events are usually ordered. For example, \\\"earning money\\\" usually appears before \\\"spending money\\\".\\nThings to avoid: Don't create questions which have explicit mentions of answers in text. Instead, it has to be implied from what is given. In other words, we want you to use \\\"instinct\\\" or \\\"common sense\\\".\\nEmphasis & Caution: The written questions are not required to have a single correct answer.",
+   "instances": "Sentence: There was even a tiny room in the back of one of the closets.",
+   "accuracy": 0.37,
+   "task in allenai dataset": "",
+   "id": "ID2"
+ },
+ {
+   "definition": "In this task, based on a given sentence, we ask you to write a question that involves ordering of event , i.e., the understanding of how events are usually ordered. For example, \\\"earning money\\\" usually appears before \\\"spending money\\\".\\nThings to avoid: Don't create questions which have explicit mentions of answers in text. Instead, it has to be implied from what is given. In other words, we want you to use \\\"instinct\\\" or \\\"common sense\\\".\\nEmphasis & Caution: The written questions are not required to have a single correct answer.",
+   "instances": "Sentence: The king of Gandhara then stops everyone from grabbing the little food that is provided .",
+   "accuracy": 0.84,
+   "task in allenai dataset": "",
+   "id": "ID2"
+ },
+ {
+   "definition": "In this task, based on a given sentence, we ask you to write a question that involves ordering of event , i.e., the understanding of how events are usually ordered. For example, \\\"earning money\\\" usually appears before \\\"spending money\\\".\\nThings to avoid: Don't create questions which have explicit mentions of answers in text. Instead, it has to be implied from what is given. In other words, we want you to use \\\"instinct\\\" or \\\"common sense\\\".\\nEmphasis & Caution: The written questions are not required to have a single correct answer.",
+   "instances": "Sentence: Several tenants blame other neighbors as perpetrators of the rift, however.",
+   "accuracy": 0.99,
+   "task in allenai dataset": "",
+   "id": "ID2"
+ },
+ {
+   "definition": "In this task, based on the given input, we ask you to write a question about when an event happened. Your question should be answerable with common knowledge on when events usually take place. For example, \\\"going to school\\\" usually happens during the day (not at 2 A.M). \\nThings to avoid: Don't create questions which have explicit mentions of answers in text. Instead, it has to be implied from what is given. In other words, we want you to use \\\"instinct\\\" or \\\"common sense\\\".\\nEmphasis & Caution: The written questions are not required to have a single correct answer. ",
+   "instances": "Sentence: It's hail crackled across the comm, and Tara spun to retake her seat at the helm.",
+   "accuracy": 0.12,
+   "task in allenai dataset": "task012_mctaco_question_generation_absolute_timepoint.json",
+   "id": "ID3"
+ },
+ {
+   "definition": "In this task, based on the given input, we ask you to write a question about when an event happened. Your question should be answerable with common knowledge on when events usually take place. For example, \\\"going to school\\\" usually happens during the day (not at 2 A.M). \\nThings to avoid: Don't create questions which have explicit mentions of answers in text. Instead, it has to be implied from what is given. In other words, we want you to use \\\"instinct\\\" or \\\"common sense\\\".\\nEmphasis & Caution: The written questions are not required to have a single correct answer. ",
+   "instances": "Sentence: Pushkin gradually became committed to social reform and emerged as a spokesman for literary radicals.",
+   "accuracy": 0.26,
+   "task in allenai dataset": "",
+   "id": "ID3"
+ },
+ {
+   "definition": "In this task, based on the given input, we ask you to write a question about when an event happened. Your question should be answerable with common knowledge on when events usually take place. For example, \\\"going to school\\\" usually happens during the day (not at 2 A.M). \\nThings to avoid: Don't create questions which have explicit mentions of answers in text. Instead, it has to be implied from what is given. In other words, we want you to use \\\"instinct\\\" or \\\"common sense\\\".\\nEmphasis & Caution: The written questions are not required to have a single correct answer. ",
+   "instances": "Sentence: What if you rode the bus or were driven in a car?.",
+   "accuracy": 0.74,
+   "task in allenai dataset": "",
+   "id": "ID3"
+ },
+ {
+   "definition": "In this task, based on the given input, we ask you to write a question about when an event happened. Your question should be answerable with common knowledge on when events usually take place. For example, \\\"going to school\\\" usually happens during the day (not at 2 A.M). \\nThings to avoid: Don't create questions which have explicit mentions of answers in text. Instead, it has to be implied from what is given. In other words, we want you to use \\\"instinct\\\" or \\\"common sense\\\".\\nEmphasis & Caution: The written questions are not required to have a single correct answer. ",
+   "instances": "Sentence: The Beatles are giving a press conference about their new film , Magical Mystery Tour .",
+   "accuracy": 0.66,
+   "task in allenai dataset": "",
+   "id": "ID3"
+ },
+ {
+   "definition": "In this task, based on the given input, we ask you to write a question about when an event happened. Your question should be answerable with common knowledge on when events usually take place. For example, \\\"going to school\\\" usually happens during the day (not at 2 A.M). \\nThings to avoid: Don't create questions which have explicit mentions of answers in text. Instead, it has to be implied from what is given. In other words, we want you to use \\\"instinct\\\" or \\\"common sense\\\".\\nEmphasis & Caution: The written questions are not required to have a single correct answer. ",
+   "instances": "Sentence: Safti admits his love for Edwina to Lord Esketh , who is now sympathetic toward this good man's plight .",
+   "accuracy": 0.56,
+   "task in allenai dataset": "",
+   "id": "ID3"
+ },
+ {
+   "definition": "In this task, based on the given input, we ask you to write a question about when an event happened. Your question should be answerable with common knowledge on when events usually take place. For example, \\\"going to school\\\" usually happens during the day (not at 2 A.M). \\nThings to avoid: Don't create questions which have explicit mentions of answers in text. Instead, it has to be implied from what is given. In other words, we want you to use \\\"instinct\\\" or \\\"common sense\\\".\\nEmphasis & Caution: The written questions are not required to have a single correct answer. ",
+   "instances": "Sentence: No defendants were ordered to pay more than a $250 fine for violating the court order.",
+   "accuracy": 0.9,
+   "task in allenai dataset": "",
+   "id": "ID3"
+ },
+ {
+   "definition": "In this task, based on the given input, we ask you to write a question about when an event happened. Your question should be answerable with common knowledge on when events usually take place. For example, \\\"going to school\\\" usually happens during the day (not at 2 A.M). \\nThings to avoid: Don't create questions which have explicit mentions of answers in text. Instead, it has to be implied from what is given. In other words, we want you to use \\\"instinct\\\" or \\\"common sense\\\".\\nEmphasis & Caution: The written questions are not required to have a single correct answer. ",
+   "instances": "Sentence: Casino operators had to reassess the nature of their business.",
+   "accuracy": 0.37,
+   "task in allenai dataset": "",
+   "id": "ID3"
+ },
+ {
+   "definition": "In this task, based on the given input, we ask you to write a question about when an event happened. Your question should be answerable with common knowledge on when events usually take place. For example, \\\"going to school\\\" usually happens during the day (not at 2 A.M). \\nThings to avoid: Don't create questions which have explicit mentions of answers in text. Instead, it has to be implied from what is given. In other words, we want you to use \\\"instinct\\\" or \\\"common sense\\\".\\nEmphasis & Caution: The written questions are not required to have a single correct answer. ",
+   "instances": "Sentence: Soaking wet, he ran toward where I was eating a sandwich on the grass and curled right up in my lap so I could make him feel better.",
+   "accuracy": 0.48,
+   "task in allenai dataset": "",
+   "id": "ID3"
+ },
+ {
+   "definition": "In this task, based on the given input, we ask you to write a question about when an event happened. Your question should be answerable with common knowledge on when events usually take place. For example, \\\"going to school\\\" usually happens during the day (not at 2 A.M). \\nThings to avoid: Don't create questions which have explicit mentions of answers in text. Instead, it has to be implied from what is given. In other words, we want you to use \\\"instinct\\\" or \\\"common sense\\\".\\nEmphasis & Caution: The written questions are not required to have a single correct answer. ",
+   "instances": "Sentence: What we call the lab-to-fab time should be as close to zero as possible, Kelly said.",
+   "accuracy": 0.41,
+   "task in allenai dataset": "",
+   "id": "ID3"
+ },
+ {
+   "definition": "In this task, based on the given input, we ask you to write a question about when an event happened. Your question should be answerable with common knowledge on when events usually take place. For example, \\\"going to school\\\" usually happens during the day (not at 2 A.M). \\nThings to avoid: Don't create questions which have explicit mentions of answers in text. Instead, it has to be implied from what is given. In other words, we want you to use \\\"instinct\\\" or \\\"common sense\\\".\\nEmphasis & Caution: The written questions are not required to have a single correct answer. ",
+   "instances": "Sentence: However , by the time Schahzenan's army reaches the city , Scheherazade's plan has worked .",
+   "accuracy": 0.66,
+   "task in allenai dataset": "",
+   "id": "ID3"
+ },
+ {
+   "definition": "Provided the input sentence, you're expected to write a question that involves event \\\"frequency\\\", which refers to how often an event is likely to be repeated. For example, \\\"taking showers\\\" typically occurs ~5 times a week, \\\"going to saturday market\\\" usually happens every few weeks/months, etc. \\nThings to avoid: Don't create questions which have explicit mentions of answers in text. Instead, it has to be implied from what is given. In other words, we want you to use \\\"instinct\\\" or \\\"common sense\\\".\\nEmphasis & Caution: The written questions are not required to have a single correct answer. ",
+   "instances": "Sentence: Wallace, 38, called Gastonia home from the age of 8 until she graduated from Hunter Huss High School in 1983.",
+   "accuracy": 0.35,
+   "task in allenai dataset": "task015_mctaco_question_generation_frequency.json",
+   "id": "ID4"
+ },
+ {
+   "definition": "Provided the input sentence, you're expected to write a question that involves event \\\"frequency\\\", which refers to how often an event is likely to be repeated. For example, \\\"taking showers\\\" typically occurs ~5 times a week, \\\"going to saturday market\\\" usually happens every few weeks/months, etc. \\nThings to avoid: Don't create questions which have explicit mentions of answers in text. Instead, it has to be implied from what is given. In other words, we want you to use \\\"instinct\\\" or \\\"common sense\\\".\\nEmphasis & Caution: The written questions are not required to have a single correct answer. ",
+   "instances": "Sentence: Jerry goes out to the pier and casts his favorite bait : cheese .",
+   "accuracy": 0.76,
+   "task in allenai dataset": "",
+   "id": "ID4"
+ },
+ {
+   "definition": "Provided the input sentence, you're expected to write a question that involves event \\\"frequency\\\", which refers to how often an event is likely to be repeated. For example, \\\"taking showers\\\" typically occurs ~5 times a week, \\\"going to saturday market\\\" usually happens every few weeks/months, etc. \\nThings to avoid: Don't create questions which have explicit mentions of answers in text. Instead, it has to be implied from what is given. In other words, we want you to use \\\"instinct\\\" or \\\"common sense\\\".\\nEmphasis & Caution: The written questions are not required to have a single correct answer. ",
+   "instances": "Sentence: She ordered the tastiest kind of each vegetable and the prettiest kind of each flower.",
+   "accuracy": 0.48,
+   "task in allenai dataset": "",
+   "id": "ID4"
+ },
+ {
+   "definition": "Provided the input sentence, you're expected to write a question that involves event \\\"frequency\\\", which refers to how often an event is likely to be repeated. For example, \\\"taking showers\\\" typically occurs ~5 times a week, \\\"going to saturday market\\\" usually happens every few weeks/months, etc. \\nThings to avoid: Don't create questions which have explicit mentions of answers in text. Instead, it has to be implied from what is given. In other words, we want you to use \\\"instinct\\\" or \\\"common sense\\\".\\nEmphasis & Caution: The written questions are not required to have a single correct answer. ",
+   "instances": "Sentence: Several tenants blame other neighbors as perpetrators of the rift, however.",
+   "accuracy": 0.19,
+   "task in allenai dataset": "",
+   "id": "ID4"
+ },
+ {
+   "definition": "Provided the input sentence, you're expected to write a question that involves event \\\"frequency\\\", which refers to how often an event is likely to be repeated. For example, \\\"taking showers\\\" typically occurs ~5 times a week, \\\"going to saturday market\\\" usually happens every few weeks/months, etc. \\nThings to avoid: Don't create questions which have explicit mentions of answers in text. Instead, it has to be implied from what is given. In other words, we want you to use \\\"instinct\\\" or \\\"common sense\\\".\\nEmphasis & Caution: The written questions are not required to have a single correct answer. ",
+   "instances": "Sentence: The king of Gandhara then stops everyone from grabbing the little food that is provided .",
+   "accuracy": 0.41,
+   "task in allenai dataset": "",
+   "id": "ID4"
+ },
+ {
+   "definition": "Provided the input sentence, you're expected to write a question that involves event \\\"frequency\\\", which refers to how often an event is likely to be repeated. For example, \\\"taking showers\\\" typically occurs ~5 times a week, \\\"going to saturday market\\\" usually happens every few weeks/months, etc. \\nThings to avoid: Don't create questions which have explicit mentions of answers in text. Instead, it has to be implied from what is given. In other words, we want you to use \\\"instinct\\\" or \\\"common sense\\\".\\nEmphasis & Caution: The written questions are not required to have a single correct answer. ",
+   "instances": "Sentence: There was even a tiny room in the back of one of the closets.",
+   "accuracy": 0.53,
+   "task in allenai dataset": "",
+   "id": "ID4"
+ },
+ {
+   "definition": "Provided the input sentence, you're expected to write a question that involves event \\\"frequency\\\", which refers to how often an event is likely to be repeated. For example, \\\"taking showers\\\" typically occurs ~5 times a week, \\\"going to saturday market\\\" usually happens every few weeks/months, etc. \\nThings to avoid: Don't create questions which have explicit mentions of answers in text. Instead, it has to be implied from what is given. In other words, we want you to use \\\"instinct\\\" or \\\"common sense\\\".\\nEmphasis & Caution: The written questions are not required to have a single correct answer. ",
+   "instances": "Sentence: In 1930, the poet Muhammad Iqbal proposed a separate Muslim homeland in the northwest of India.",
+   "accuracy": 0.55,
+   "task in allenai dataset": "",
+   "id": "ID4"
+ },
+ {
+   "definition": "Provided the input sentence, you're expected to write a question that involves event \\\"frequency\\\", which refers to how often an event is likely to be repeated. For example, \\\"taking showers\\\" typically occurs ~5 times a week, \\\"going to saturday market\\\" usually happens every few weeks/months, etc. \\nThings to avoid: Don't create questions which have explicit mentions of answers in text. Instead, it has to be implied from what is given. In other words, we want you to use \\\"instinct\\\" or \\\"common sense\\\".\\nEmphasis & Caution: The written questions are not required to have a single correct answer. ",
+   "instances": "Sentence: Bailey received the award for his three years of volunteer work at Indiana Pro Bono Commission.",
+   "accuracy": 0.61,
+   "task in allenai dataset": "",
+   "id": "ID4"
+ },
+ {
+   "definition": "Provided the input sentence, you're expected to write a question that involves event \\\"frequency\\\", which refers to how often an event is likely to be repeated. For example, \\\"taking showers\\\" typically occurs ~5 times a week, \\\"going to saturday market\\\" usually happens every few weeks/months, etc. \\nThings to avoid: Don't create questions which have explicit mentions of answers in text. Instead, it has to be implied from what is given. In other words, we want you to use \\\"instinct\\\" or \\\"common sense\\\".\\nEmphasis & Caution: The written questions are not required to have a single correct answer. ",
+   "instances": "Sentence: About 30% of Ratners's profit already is derived from the U.S.",
+   "accuracy": 0.78,
+   "task in allenai dataset": "",
+   "id": "ID4"
+ },
+ {
+   "definition": "Provided the input sentence, you're expected to write a question that involves event \\\"frequency\\\", which refers to how often an event is likely to be repeated. For example, \\\"taking showers\\\" typically occurs ~5 times a week, \\\"going to saturday market\\\" usually happens every few weeks/months, etc. \\nThings to avoid: Don't create questions which have explicit mentions of answers in text. Instead, it has to be implied from what is given. In other words, we want you to use \\\"instinct\\\" or \\\"common sense\\\".\\nEmphasis & Caution: The written questions are not required to have a single correct answer. ",
+   "instances": "Sentence: I suppose he was attracted to the commotion up the hill.",
+   "accuracy": 0.45,
+   "task in allenai dataset": "",
+   "id": "ID4"
+ },
+ {
+   "definition": "Given scientific fact as input, generate the question from this fact such that it can be answered from the input.",
+   "instances": "Saturn is made mostly of helium and hydrogen.",
+   "accuracy": 0.35,
+   "task in allenai dataset": "task1552_scitail_question_generation.json",
+   "id": "ID5"
+ },
+ {
+   "definition": "Given scientific fact as input, generate the question from this fact such that it can be answered from the input.",
+   "instances": "Cellulose is created by the polymerization of glucose.",
+   "accuracy": 0.18,
+   "task in allenai dataset": "",
+   "id": "ID5"
+ },
+ {
+   "definition": "Given scientific fact as input, generate the question from this fact such that it can be answered from the input.",
+   "instances": "Proteins is needed to create muscles, regulate chemical reactions, and transport oxygen.",
+   "accuracy": 0.45,
+   "task in allenai dataset": "",
+   "id": "ID5"
+ },
+ {
+   "definition": "Given scientific fact as input, generate the question from this fact such that it can be answered from the input.",
+   "instances": "Of the four main wobble base pairs, guanine is paired with uracil.",
+   "accuracy": 0.82,
+   "task in allenai dataset": "",
+   "id": "ID5"
+ },
+ {
+   "definition": "Given scientific fact as input, generate the question from this fact such that it can be answered from the input.",
+   "instances": "Genome mapping term is used to describe the process of finding the location of genes on each chromosome.",
+   "accuracy": 0.99,
+   "task in allenai dataset": "",
+   "id": "ID5"
+ },
+ {
+   "definition": "Given scientific fact as input, generate the question from this fact such that it can be answered from the input.",
+   "instances": "The term macroevolution refers to larger evolutionary changes that result in new species.",
+   "accuracy": 0.12,
+   "task in allenai dataset": "",
+   "id": "ID5"
+ },
+ {
+   "definition": "Given scientific fact as input, generate the question from this fact such that it can be answered from the input.",
+   "instances": "Are thunderstorms more likely extremely high the ground temperatures are extremely high or extremely low.",
+   "accuracy": 0.22,
+   "task in allenai dataset": "",
+   "id": "ID5"
+ },
+ {
+   "definition": "Given scientific fact as input, generate the question from this fact such that it can be answered from the input.",
+   "instances": "The stomach mucosa’s epithelial lining consists only of surface mucus cells, which secrete a protective coat of alkaline mucus.",
+   "accuracy": 0.75,
+   "task in allenai dataset": "",
+   "id": "ID5"
+ },
+ {
+   "definition": "Given scientific fact as input, generate the question from this fact such that it can be answered from the input.",
+   "instances": "Ovulation occurs before the endometrium thickens in estrous cycles.",
+   "accuracy": 0.88,
+   "task in allenai dataset": "",
+   "id": "ID5"
+ },
+ {
+   "definition": "Given scientific fact as input, generate the question from this fact such that it can be answered from the input.",
+   "instances": "No reaction happens when alkanes are mixed with oxygen at room temperature.",
+   "accuracy": 0.55,
+   "task in allenai dataset": "",
+   "id": "ID5"
+ },
+ {
+   "definition": "In this task, you are given a sentence and a verb from the sentence. Your task is to generate a set of wh-questions starting with who, what, when, where, why, how, how much. The generated questions must contain the verb and the answers to these questions are phrases in the input sentence. The answer to the questions is associated with a specific semantic role. The answer to these questions is associated with a specific semantic role. The questions must use pronouns instead of direct nouns that could be used to refer to various roles present in the sentence. Construct a question in such a way that (i) it is unambiguous, (ii) its answer is unique (iii) its answer is a continuous text span from the paragraph.",
+   "instances": "Sentence: Ladd has won a Golden Globe and a BAFTA and has been nominated three times for the Academy Award for Best Supporting Actress . \\n Verb: won",
+   "accuracy": 0.44,
+   "task in allenai dataset": "task1519_qa_srl_question_generation.json",
+   "id": "ID6"
+ },
+ {
+   "definition": "In this task, you are given a sentence and a verb from the sentence. Your task is to generate a set of wh-questions starting with who, what, when, where, why, how, how much. The generated questions must contain the verb and the answers to these questions are phrases in the input sentence. The answer to the questions is associated with a specific semantic role. The answer to these questions is associated with a specific semantic role. The questions must use pronouns instead of direct nouns that could be used to refer to various roles present in the sentence. Construct a question in such a way that (i) it is unambiguous, (ii) its answer is unique (iii) its answer is a continuous text span from the paragraph.",
+   "instances": "Sentence: Ladd has won a Golden Globe and a BAFTA and has been nominated three times for the Academy Award for Best Supporting Actress . \\n Verb: nominated",
+   "accuracy": 0.51,
+   "task in allenai dataset": "",
+   "id": "ID6"
+ },
+ {
+   "definition": "In this task, you are given a sentence and a verb from the sentence. Your task is to generate a set of wh-questions starting with who, what, when, where, why, how, how much. The generated questions must contain the verb and the answers to these questions are phrases in the input sentence. The answer to the questions is associated with a specific semantic role. The answer to these questions is associated with a specific semantic role. The questions must use pronouns instead of direct nouns that could be used to refer to various roles present in the sentence. Construct a question in such a way that (i) it is unambiguous, (ii) its answer is unique (iii) its answer is a continuous text span from the paragraph.",
+   "instances": "Sentence: Ladd has won a Golden Globe and a BAFTA and has been nominated three times for the Academy Award for Best Supporting Actress . \\n Verb: supporting",
+   "accuracy": 0.81,
+   "task in allenai dataset": "",
+   "id": "ID6"
+ },
+ {
+   "definition": "In this task, you are given a sentence and a verb from the sentence. Your task is to generate a set of wh-questions starting with who, what, when, where, why, how, how much. The generated questions must contain the verb and the answers to these questions are phrases in the input sentence. The answer to the questions is associated with a specific semantic role. The answer to these questions is associated with a specific semantic role. The questions must use pronouns instead of direct nouns that could be used to refer to various roles present in the sentence. Construct a question in such a way that (i) it is unambiguous, (ii) its answer is unique (iii) its answer is a continuous text span from the paragraph.",
+   "instances": "Sentence: In England , at the time of the Domesday Survey , this would have comprised between about 1 and 5 acres . \\n Verb: comprised",
+   "accuracy": 0.32,
+   "task in allenai dataset": "",
+   "id": "ID6"
+ },
+ {
+   "definition": "In this task, you are given a sentence and a verb from the sentence. Your task is to generate a set of wh-questions starting with who, what, when, where, why, how, how much. The generated questions must contain the verb and the answers to these questions are phrases in the input sentence. The answer to the questions is associated with a specific semantic role. The answer to these questions is associated with a specific semantic role. The questions must use pronouns instead of direct nouns that could be used to refer to various roles present in the sentence. Construct a question in such a way that (i) it is unambiguous, (ii) its answer is unique (iii) its answer is a continuous text span from the paragraph.",
+   "instances": "Sentence: As ionospheric conditions and mobile-node locations change , these quality tuples will shift . \\n Verb: change",
+   "accuracy": 0.81,
+   "task in allenai dataset": "",
+   "id": "ID6"
+ },
+ {
+   "definition": "In this task, you are given a sentence and a verb from the sentence. Your task is to generate a set of wh-questions starting with who, what, when, where, why, how, how much. The generated questions must contain the verb and the answers to these questions are phrases in the input sentence. The answer to the questions is associated with a specific semantic role. The answer to these questions is associated with a specific semantic role. The questions must use pronouns instead of direct nouns that could be used to refer to various roles present in the sentence. Construct a question in such a way that (i) it is unambiguous, (ii) its answer is unique (iii) its answer is a continuous text span from the paragraph.",
+   "instances": "Sentence: As ionospheric conditions and mobile-node locations change , these quality tuples will shift . \\n Verb: shift",
+   "accuracy": 0.34,
+   "task in allenai dataset": "",
+   "id": "ID6"
+ },
+ {
+   "definition": "In this task, you are given a sentence and a verb from the sentence. Your task is to generate a set of wh-questions starting with who, what, when, where, why, how, how much. The generated questions must contain the verb and the answers to these questions are phrases in the input sentence. The answer to the questions is associated with a specific semantic role. The answer to these questions is associated with a specific semantic role. The questions must use pronouns instead of direct nouns that could be used to refer to various roles present in the sentence. Construct a question in such a way that (i) it is unambiguous, (ii) its answer is unique (iii) its answer is a continuous text span from the paragraph.",
+   "instances": "Sentence: The economy of the early village was based on fishing and ship building . \\n Verb: based",
+   "accuracy": 0.49,
+   "task in allenai dataset": "",
+   "id": "ID6"
+ },
+ {
+   "definition": "In this task, you are given a sentence and a verb from the sentence. Your task is to generate a set of wh-questions starting with who, what, when, where, why, how, how much. The generated questions must contain the verb and the answers to these questions are phrases in the input sentence. The answer to the questions is associated with a specific semantic role. The answer to these questions is associated with a specific semantic role. The questions must use pronouns instead of direct nouns that could be used to refer to various roles present in the sentence. Construct a question in such a way that (i) it is unambiguous, (ii) its answer is unique (iii) its answer is a continuous text span from the paragraph.",
+   "instances": "Sentence: The Venezuelan government declined to appeal the case any further , and in November 1987 Bosch was freed . \\n Verb: declined",
+   "accuracy": 0.52,
+   "task in allenai dataset": "",
+   "id": "ID6"
+ },
+ {
+   "definition": "In this task, you are given a sentence and a verb from the sentence. Your task is to generate a set of wh-questions starting with who, what, when, where, why, how, how much. The generated questions must contain the verb and the answers to these questions are phrases in the input sentence. The answer to the questions is associated with a specific semantic role. The answer to these questions is associated with a specific semantic role. The questions must use pronouns instead of direct nouns that could be used to refer to various roles present in the sentence. Construct a question in such a way that (i) it is unambiguous, (ii) its answer is unique (iii) its answer is a continuous text span from the paragraph.",
+   "instances": "Sentence: The Venezuelan government declined to appeal the case any further , and in November 1987 Bosch was freed . \\n Verb: appeal",
+   "accuracy": 0.48,
+   "task in allenai dataset": "",
+   "id": "ID6"
+ },
+ {
+   "definition": "In this task, you are given a sentence and a verb from the sentence. Your task is to generate a set of wh-questions starting with who, what, when, where, why, how, how much. The generated questions must contain the verb and the answers to these questions are phrases in the input sentence. The answer to the questions is associated with a specific semantic role. The answer to these questions is associated with a specific semantic role. The questions must use pronouns instead of direct nouns that could be used to refer to various roles present in the sentence. Construct a question in such a way that (i) it is unambiguous, (ii) its answer is unique (iii) its answer is a continuous text span from the paragraph.",
+   "instances": "Sentence: The Venezuelan government declined to appeal the case any further , and in November 1987 Bosch was freed . \\n Verb: freed",
+   "accuracy": 0.72,
+   "task in allenai dataset": "",
+   "id": "ID6"
+ },
+ {
+   "definition": "In this task, you will be given a passage consisting of set of facts. The task is to create a question of form 'Where is <person_name>?' that is answerable from exactly one of the given facts. Avoid creating questions that are unanswerable from all of the facts",
+   "instances": "Passage:  Sandra travelled to the office. Sandra went to the bathroom.",
+   "accuracy": 0.86,
+   "task in allenai dataset": "task082_babi_t1_single_supporting_fact_question_generation.json",
+   "id": "ID7"
+ },
+ {
+   "definition": "In this task, you will be given a passage consisting of set of facts. The task is to create a question of form 'Where is <person_name>?' that is answerable from exactly one of the given facts. Avoid creating questions that are unanswerable from all of the facts",
+   "instances": "Passage:  Sandra travelled to the office. Sandra went to the bathroom. Mary went to the bedroom. Daniel moved to the hallway.",
+   "accuracy": 0.49,
+   "task in allenai dataset": "",
+   "id": "ID7"
+ },
+ {
+   "definition": "In this task, you will be given a passage consisting of set of facts. The task is to create a question of form 'Where is <person_name>?' that is answerable from exactly one of the given facts. Avoid creating questions that are unanswerable from all of the facts",
+   "instances": "Passage:  Mary went to the bedroom. John journeyed to the bathroom.",
+   "accuracy": 0.52,
+   "task in allenai dataset": "",
+   "id": "ID7"
+ },
+ {
+   "definition": "In this task, you will be given a passage consisting of set of facts. The task is to create a question of form 'Where is <person_name>?' that is answerable from exactly one of the given facts. Avoid creating questions that are unanswerable from all of the facts",
+   "instances": "Passage: Mary went to the bedroom. John journeyed to the bathroom. Sandra journeyed to the hallway. John journeyed to the garden.",
+   "accuracy": 0.58,
+   "task in allenai dataset": "",
+   "id": "ID7"
+ },
+ {
+   "definition": "In this task, you will be given a passage consisting of set of facts. The task is to create a question of form 'Where is <person_name>?' that is answerable from exactly one of the given facts. Avoid creating questions that are unanswerable from all of the facts",
+   "instances": "Passage: Daniel journeyed to the kitchen. Daniel journeyed to the bedroom.",
+   "accuracy": 0.91,
+   "task in allenai dataset": "",
+   "id": "ID7"
+ },
+ {
+   "definition": "In this task, you will be given a passage consisting of set of facts. The task is to create a question of form 'Where is <person_name>?' that is answerable from exactly one of the given facts. Avoid creating questions that are unanswerable from all of the facts",
+   "instances": "Passage: Daniel journeyed to the kitchen. Daniel journeyed to the bedroom. Sandra moved to the garden. Sandra went back to the kitchen.",
+   "accuracy": 0.87,
+   "task in allenai dataset": "",
+   "id": "ID7"
+ },
+ {
+   "definition": "In this task, you will be given a passage consisting of set of facts. The task is to create a question of form 'Where is <person_name>?' that is answerable from exactly one of the given facts. Avoid creating questions that are unanswerable from all of the facts",
+   "instances": "Passage: Mary moved to the garden. John journeyed to the bathroom.",
+   "accuracy": 0.83,
+   "task in allenai dataset": "",
+   "id": "ID7"
+ },
+ {
+   "definition": "In this task, you will be given a passage consisting of set of facts. The task is to create a question of form 'Where is <person_name>?' that is answerable from exactly one of the given facts. Avoid creating questions that are unanswerable from all of the facts",
+   "instances": "Passage: Mary moved to the garden. John journeyed to the bathroom. Sandra moved to the office. John moved to the kitchen.",
+   "accuracy": 0.84,
+   "task in allenai dataset": "",
+   "id": "ID7"
+ },
+ {
+   "definition": "In this task, you will be given a passage consisting of set of facts. The task is to create a question of form 'Where is <person_name>?' that is answerable from exactly one of the given facts. Avoid creating questions that are unanswerable from all of the facts",
+   "instances": "Passage: Mary moved to the garden. Daniel journeyed to the bathroom.",
+   "accuracy": 0.45,
+   "task in allenai dataset": "",
+   "id": "ID7"
+ },
+ {
+   "definition": "In this task, you will be given a passage consisting of set of facts. The task is to create a question of form 'Where is <person_name>?' that is answerable from exactly one of the given facts. Avoid creating questions that are unanswerable from all of the facts",
+   "instances": "Passage: John moved to the bedroom. Mary moved to the hallway.",
+   "accuracy": 0.66,
+   "task in allenai dataset": "",
+   "id": "ID7"
+ },
+ {
+   "definition": "You will be given a context, a subject and a relation. Your task is to generate a question based on the subject and relation. The generated question should include the given subject. Try to use a minimum number of words that are not present in either context, subject or relation while generating question.",
+   "instances": "Context : UK (an abbreviation of CountDown United Kingdom) was broadcast, with the same presenters as SMTV Live. \\nSubject : SMTV Live \\nRelation : original network",
+   "accuracy": 0.29,
+   "task in allenai dataset": "task1325_qa_zre_question_generation_on_subject_relation.json",
+   "id": "ID8"
+ },
+ {
+   "definition": "You will be given a context, a subject and a relation. Your task is to generate a question based on the subject and relation. The generated question should include the given subject. Try to use a minimum number of words that are not present in either context, subject or relation while generating question.",
+   "instances": "Context : Antonio Cur\\u00f2 (21 June 1828, Bergamo -- 10 May 1906) was an Italian engineer and entomologist. \\nSubject : Antonio Cur\\u00f2 \\nRelation : occupation",
+   "accuracy": 0.37,
+   "task in allenai dataset": "",
+   "id": "ID8"
+ },
+ {
+   "definition": "You will be given a context, a subject and a relation. Your task is to generate a question based on the subject and relation. The generated question should include the given subject. Try to use a minimum number of words that are not present in either context, subject or relation while generating question.",
+   "instances": "Context : Bernard Chenot (20 May 1909, Paris -- 5 June 1995) was a French politician and senior official. \\nSubject : Bernard Chenot \\nRelation : date of death",
+   "accuracy": 0.43,
+   "task in allenai dataset": "",
+   "id": "ID8"
+ },
+ {
+   "definition": "You will be given a context, a subject and a relation. Your task is to generate a question based on the subject and relation. The generated question should include the given subject. Try to use a minimum number of words that are not present in either context, subject or relation while generating question.",
+   "instances": "Context : Tariq Abdul-Wahad (born Olivier Michael Saint-Jean; November 3, 1974) is a French basketball coach and former player. \\nSubject : Tariq Abdul-Wahad \\nRelation : drafted by",
+   "accuracy": 0.54,
+   "task in allenai dataset": "",
+   "id": "ID8"
+ },
+ {
+   "definition": "You will be given a context, a subject and a relation. Your task is to generate a question based on the subject and relation. The generated question should include the given subject. Try to use a minimum number of words that are not present in either context, subject or relation while generating question.",
+   "instances": "Context : HD 132563 is a triple star system in the constellation Bo\\u00f6tes. \\nSubject : HD 132563 \\nRelation : constellation",
+   "accuracy": 0.74,
+   "task in allenai dataset": "",
+   "id": "ID8"
+ },
+ {
+   "definition": "You will be given a context, a subject and a relation. Your task is to generate a question based on the subject and relation. The generated question should include the given subject. Try to use a minimum number of words that are not present in either context, subject or relation while generating question.",
+   "instances": "Context : NGC 185 was discovered by William Herschel on November 30, 1787, and he cataloged it ``H II.707''. \\nSubject : NGC 185 \\nRelation : constellation",
+   "accuracy": 0.66,
+   "task in allenai dataset": "",
+   "id": "ID8"
+ },
+ {
+   "definition": "You will be given a context, a subject and a relation. Your task is to generate a question based on the subject and relation. The generated question should include the given subject. Try to use a minimum number of words that are not present in either context, subject or relation while generating question.",
+   "instances": "Context : Joseph J. Went was born in New Milford, Connecticut on 16 September 1930. \\nSubject : Joseph J. Went \\nRelation : military branch",
+   "accuracy": 0.59,
+   "task in allenai dataset": "",
+   "id": "ID8"
+ },
+ {
+   "definition": "You will be given a context, a subject and a relation. Your task is to generate a question based on the subject and relation. The generated question should include the given subject. Try to use a minimum number of words that are not present in either context, subject or relation while generating question.",
+   "instances": "Context : The Matrix is a 1999 American-- \\nSubject : The Matrix \\nRelation : production company",
+   "accuracy": 0.41,
+   "task in allenai dataset": "",
+   "id": "ID8"
+ },
+ {
+   "definition": "You will be given a context, a subject and a relation. Your task is to generate a question based on the subject and relation. The generated question should include the given subject. Try to use a minimum number of words that are not present in either context, subject or relation while generating question.",
+   "instances": "Context : Novatek and Gazprom plan to build a liquefied natural gas plant in Yamalo-Nenets Autonomous Okrug. \\nSubject : Novatek \\nRelation : parent company",
+   "accuracy": 0.33,
+   "task in allenai dataset": "",
+   "id": "ID8"
+ },
+ {
+   "definition": "You will be given a context, a subject and a relation. Your task is to generate a question based on the subject and relation. The generated question should include the given subject. Try to use a minimum number of words that are not present in either context, subject or relation while generating question.",
+   "instances": "Context : Black Sabbath were inducted into the UK Music Hall of Fame in 2005 and the Rock and Roll Hall of Fame in 2006. \\nSubject : Black Sabbath \\nRelation : award received",
+   "accuracy": 0.28,
+   "task in allenai dataset": "",
+   "id": "ID8"
+ },
+ {
+   "definition": "Generate a question which can yield the answer mentioned in the input. Things to follow while generating the dataset. 1. Generated question must be answered by the answer provided in input, without using any extra knowledge",
+   "instances": "Context : Paris in Spring (also released as Paris Love Song) is a 1935 black and white musical comedy film directed by Lewis Milestone for Paramount Pictures. \\nAnswer : Paramount Pictures",
+   "accuracy": 0.11,
+   "task in allenai dataset": "task1326_qa_zre_question_generation_from_answer.json",
+   "id": "ID9"
+ },
+ {
+   "definition": "Generate a question which can yield the answer mentioned in the input. Things to follow while generating the dataset. 1. Generated question must be answered by the answer provided in input, without using any extra knowledge",
+   "instances": "Context : The Vision of Saint Eustace is a painting by the early Italian Renaissance master Pisanello, now in the National Gallery in London. \\nAnswer : National Gallery",
+   "accuracy": 0.45,
+   "task in allenai dataset": "",
+   "id": "ID9"
+ },
+ {
+   "definition": "Generate a question which can yield the answer mentioned in the input. Things to follow while generating the dataset. 1. Generated question must be answered by the answer provided in input, without using any extra knowledge",
+   "instances": "Bernard Chenot (20 May 1909, Paris -- 5 June 1995) was a French politician and senior official. \\nAnswer : 5 June 1995",
+   "accuracy": 0.62,
+   "task in allenai dataset": "",
+   "id": "ID9"
+ },
+ {
+   "definition": "Generate a question which can yield the answer mentioned in the input. Things to follow while generating the dataset. 1. Generated question must be answered by the answer provided in input, without using any extra knowledge",
+   "instances": "Cython is a derivative of the Pyrex language, and supports more features and optimizations than Pyrex. \\nAnswer : Pyrex",
+   "accuracy": 0.88,
+   "task in allenai dataset": "",
+   "id": "ID9"
+ },
+ {
+   "definition": "Generate a question which can yield the answer mentioned in the input. Things to follow while generating the dataset. 1. Generated question must be answered by the answer provided in input, without using any extra knowledge",
+   "instances": "Context : HD 132563 is a triple star system in the constellation Bo\\u00f6tes. \\nAnswer : Bo\\u00f6tes",
+   "accuracy": 0.81,
+   "task in allenai dataset": "",
+   "id": "ID9"
+ },
+ {
+   "definition": "Generate a question which can yield the answer mentioned in the input. Things to follow while generating the dataset. 1. Generated question must be answered by the answer provided in input, without using any extra knowledge",
+   "instances": "Context : Novatek and Gazprom plan to build a liquefied natural gas plant in Yamalo-Nenets Autonomous Okrug. \\nAnswer : Gazprom",
+   "accuracy": 0.74,
+   "task in allenai dataset": "",
+   "id": "ID9"
+ },
+ {
+   "definition": "Generate a question which can yield the answer mentioned in the input. Things to follow while generating the dataset. 1. Generated question must be answered by the answer provided in input, without using any extra knowledge",
+   "instances": "Context : Juan Pablo Cardenal Nicolau (Barcelona, 1968) is a Spanish journalist and writer. \\nAnswer : journalist",
+   "accuracy": 0.33,
+   "task in allenai dataset": "",
+   "id": "ID9"
+ },
+ {
+   "definition": "Generate a question which can yield the answer mentioned in the input. Things to follow while generating the dataset. 1. Generated question must be answered by the answer provided in input, without using any extra knowledge",
+   "instances": "Context : Previously known as LAV-300 A1, it was named LAV-600 in 1986. \\nAnswer : 1986",
+   "accuracy": 0.48,
+   "task in allenai dataset": "",
+   "id": "ID9"
+ },
+ {
+   "definition": "Generate a question which can yield the answer mentioned in the input. Things to follow while generating the dataset. 1. Generated question must be answered by the answer provided in input, without using any extra knowledge",
+   "instances": "Context : WASP-43 is a K-type star in the Sextans constellation. \\nAnswer : Sextans",
+   "accuracy": 0.53,
+   "task in allenai dataset": "",
+   "id": "ID9"
+ },
+ {
+   "definition": "Generate a question which can yield the answer mentioned in the input. Things to follow while generating the dataset. 1. Generated question must be answered by the answer provided in input, without using any extra knowledge",
+   "instances": "Context : Nerds FC is produced by SBS independent and Grundy Television (which has now merged with Crackerjack to become FremantleMedia Australia). \\nAnswer : FremantleMedia",
+   "accuracy": 0.52,
+   "task in allenai dataset": "",
+   "id": "ID9"
+ },
+ {
+   "definition": "Given a fact, create a question that can be answered using the fact. Construct the question such that it is unambiguous, has a unique answer and the answer can be given using the fact.\",",
+   "instances": "Fact: as a source of light becomes closer , that source will appear brighter",
+   "accuracy": 0.17,
+   "task in allenai dataset": "task1398_obqa_question_generation.json",
+   "id": "ID10"
+ },
+ {
+   "definition": "Given a fact, create a question that can be answered using the fact. Construct the question such that it is unambiguous, has a unique answer and the answer can be given using the fact.\",",
+   "instances": "Fact: a seismometer is used to measure the strength or magnitude of an earthquake",
+   "accuracy": 0.27,
+   "task in allenai dataset": "",
+   "id": "ID10"
+ },
+ {
+   "definition": "Given a fact, create a question that can be answered using the fact. Construct the question such that it is unambiguous, has a unique answer and the answer can be given using the fact.\",",
+   "instances": "Fact: high tide is a stage in the tide cycle process",
+   "accuracy": 0.33,
+   "task in allenai dataset": "",
+   "id": "ID10"
+ },
+ {
+   "definition": "Given a fact, create a question that can be answered using the fact. Construct the question such that it is unambiguous, has a unique answer and the answer can be given using the fact.\",",
+   "instances": "Fact: An example of a chemical change is acid breaking down substances",
+   "accuracy": 0.66,
+   "task in allenai dataset": "",
+   "id": "ID10"
+ },
+ {
+   "definition": "Given a fact, create a question that can be answered using the fact. Construct the question such that it is unambiguous, has a unique answer and the answer can be given using the fact.\",",
+   "instances": "Fact: as distance to a city decreases , the amount of light pollution will increase",
+   "accuracy": 0.61,
+   "task in allenai dataset": "",
+   "id": "ID10"
+ },
+ {
+   "definition": "Given a fact, create a question that can be answered using the fact. Construct the question such that it is unambiguous, has a unique answer and the answer can be given using the fact.\",",
+   "instances": "Fact: winter is when a hemisphere is tilted away from the sun",
+   "accuracy": 0.54,
+   "task in allenai dataset": "",
+   "id": "ID10"
+ },
+ {
+   "definition": "Given a fact, create a question that can be answered using the fact. Construct the question such that it is unambiguous, has a unique answer and the answer can be given using the fact.\",",
+   "instances": "Fact: a doorbell converts electrical energy into sound",
+   "accuracy": 0.38,
+   "task in allenai dataset": "",
+   "id": "ID10"
+ },
+ {
+   "definition": "Given a fact, create a question that can be answered using the fact. Construct the question such that it is unambiguous, has a unique answer and the answer can be given using the fact.\",",
+   "instances": "Fact: a stove generates heat for cooking usually",
+   "accuracy": 0.82,
+   "task in allenai dataset": "",
+   "id": "ID10"
+ },
+ {
+   "definition": "Given a fact, create a question that can be answered using the fact. Construct the question such that it is unambiguous, has a unique answer and the answer can be given using the fact.\",",
+   "instances": "Fact: sunlight produces heat",
+   "accuracy": 0.38,
+   "task in allenai dataset": "",
+   "id": "ID10"
+ },
+ {
+   "definition": "Given a fact, create a question that can be answered using the fact. Construct the question such that it is unambiguous, has a unique answer and the answer can be given using the fact.\",",
+   "instances": "Fact: a tape measure is used to measure length",
+   "accuracy": 0.49,
+   "task in allenai dataset": "",
+   "id": "ID10"
+ }
+]
