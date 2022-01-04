@@ -8,6 +8,7 @@ import ClipLoader from "react-spinners/ClipLoader";
 import { SiCrowdsource } from "react-icons/si";
 import { MdCategory } from "react-icons/md";
 import { RiQuestionnaireLine } from "react-icons/ri";
+import { CgController } from "react-icons/cg";
 import THREEx from "./threex.domevents";
 import embeddings from "./embeddings";
 import * as THREE from 'three';
@@ -20,11 +21,12 @@ import Modal from 'react-bootstrap/Modal';
 import InputGroup from 'react-bootstrap/InputGroup'
 import FormControl from 'react-bootstrap/FormControl'
 import Chord from "./Chord";
+import CONSTANTS from "./constants";
 
 const PanelLayout = () => {
 
     const [panelOrder, setPanelOrder] = useState({one: 0,two: 1,three: 2,four: 3,five: 4});
-    const [panelSpan, setPanelSpan] = useState({one: 4,two: 4,three: 4,four: 8,five: 4});
+    const [panelSpan, setPanelSpan] = useState({one: 4,two: 4,three: 4,four: 6,five: 6});
     const [biasloading, setBiasLoading] = useState(false);
     const [biasRefresh, setBiasRefresh] = useState(false);
     const [netWorkloading, setNetWorkLoading] = useState(false);
@@ -37,18 +39,28 @@ const PanelLayout = () => {
     const [task, setTask] = useState('');
     const [taskNeighbours, setTaskNeighbours] = useState([]);
     const [biasSelectedOption, setBiasSelectedOption] = useState('t2');
+    const [sphereSelectedOption, setSphereSelectedOption] = useState('Category');
+    const [beeSwarmOpacity, setBeeSwarmOpacity] = useState(0.1);
+    const [chordOpacity, setChordOpacity] = useState(0.1);
+    const [biasOpacity, setBiasOpacity] = useState(0.1);
+    const [networkGraphOpacity, setNetworkGraphOpacity] = useState(0.1);
     const [biasSelectOptions, setBiasSelectOptions] = useState([
-        { value: 't1', label: 'Unique Vocabulary' },
-        { value: 't2', label: 'Sentence Lengths' },
-        { value: 't3', label: 'Word Frequency' },
-        { value: 't4', label: 'Adjectives' },
-        { value: 't5', label: 'Adverbs' },
-        { value: 't6', label: 'Verbs' },
-        { value: 't7', label: 'Nouns' },
-        { value: 't8', label: 'Bigrams' },
-        { value: 't9', label: 'Trigrams' },
-        { value: 't10', label: 'Examples Correlation' },
-        { value: 't11', label: 'Word Overlap' },
+            { value: 't1', label: 'Unique Vocabulary' },
+            { value: 't2', label: 'Sentence Lengths' },
+            { value: 't3', label: 'Word Frequency' },
+            { value: 't4', label: 'Adjectives' },
+            { value: 't5', label: 'Adverbs' },
+            { value: 't6', label: 'Verbs' },
+            { value: 't7', label: 'Nouns' },
+            { value: 't8', label: 'Bigrams' },
+            { value: 't9', label: 'Trigrams' },
+            { value: 't10', label: 'Examples Correlation' },
+            { value: 't11', label: 'Word Overlap' },
+        ]
+    );
+    const [sphereSelectOptions, setSphereSelectOptions] = useState([
+            { value: 'Category', label: 'Category' },
+            { value: 'Source', label: 'Source' },
         ]
     );
     const [show, setShow] = useState(false);
@@ -81,7 +93,7 @@ const PanelLayout = () => {
         setShow(true);
     }
 
-    let camera, renderer, canvas, material, sourceMaterial, scene = '', focusMaterial, blurMaterial, neighbours=[];
+    let camera, renderer, canvas, material, sourceMaterial, scene = '', focusMaterial, blurMaterial, clickMaterial, neighbours=[];
     let inside_button;
 
     const showTooltip = (event ) => {
@@ -91,7 +103,7 @@ const PanelLayout = () => {
         tooltip.style.top = (y + 20) + 'px';
         tooltip.style.left = (x + 20) + 'px';
         tooltip.style.display = 'block';
-        if(document.getElementById('icon-value').innerText === 'category'){
+        if(document.getElementById('sphere-select-value').innerText.includes('Category') ){
             tooltip.innerText = event.target.userData.data.category;
         }else{
             tooltip.innerText = event.target.userData.data.source;
@@ -102,6 +114,7 @@ const PanelLayout = () => {
             let aspect_ratio = window.innerWidth/ window.innerHeight;
             focusMaterial = new THREE.PointsMaterial( { size: 5, map: createCircleTexture('#0000ff', 256), transparent: true, depthWrite: false})
             blurMaterial = new THREE.PointsMaterial( { size: 5, map: createCircleTexture('#d3d3d3', 256), transparent: true, depthWrite: false})
+            clickMaterial = new THREE.PointsMaterial( { size: 5, map: createCircleTexture('#ff0000', 256), transparent: true, depthWrite: false})
             if(canvas !== null) {
                 canvas.style.width = '100%';
                 canvas.style.height = '100%';
@@ -127,8 +140,8 @@ const PanelLayout = () => {
                 material = []
                 sourceMaterial = []
                 for ( let i = 0; i < embeddings.length; i ++ ) {
-                    material.push(new THREE.PointsMaterial( { size: 5, map: createCircleTexture(category_colour(embeddings[i]["category_number"]), 256), transparent: true, depthWrite: false}));
-                    sourceMaterial.push(new THREE.PointsMaterial( { size: 5, map: createCircleTexture(source_colour(embeddings[i]["source_number"]), 256), transparent: true, depthWrite: false}));
+                    material.push(new THREE.PointsMaterial( { opacity: 1,size: 5, map: createCircleTexture(category_colour(embeddings[i]["category_number"]), 256), transparent: true, depthWrite: false}));
+                    sourceMaterial.push(new THREE.PointsMaterial( { opacity: 1,size: 5, map: createCircleTexture(source_colour(embeddings[i]["source_number"]), 256), transparent: true, depthWrite: false}));
                     const geometry = new THREE.BufferGeometry();
                     const vertices = [];
                     const vertex = new THREE.Vector3();
@@ -150,19 +163,50 @@ const PanelLayout = () => {
                     point.updateMatrix();
                     scene.add(point);
                     domEvents.addEventListener(point, 'mouseover', (event) => {
+                        if(event.target.material === blurMaterial || event.target.material === clickMaterial || event.target.material === focusMaterial ){
+                            neighbours = [];
+                        }
                         if(neighbours.length !== 0){
                             if(neighbours.includes(point.userData.data.id)){
                                 event.target.material.size = 10
                                 showTooltip(event);
                             }
                         }else{
-                            event.target.material.size = 10
-                            showTooltip(event);
+                            if(event.target.material !== blurMaterial && event.target.material !== clickMaterial && event.target.material !== focusMaterial ){
+                                let key = 'source_number';
+                                if(document.getElementById('sphere-select-value').innerText.includes('Category')){
+                                    key = 'category_number';
+                                }
+                                for ( let i = 0; i < embeddings.length; i ++ ) {
+                                    if(event.target.parent.children[i] !== undefined){
+                                        event.target.parent.children[i].material.opacity = 0.5;
+                                        if(event.target.userData.data[key] === event.target.parent.children[i].userData.data[key]){
+                                            event.target.parent.children[i].material.opacity = 1;
+                                            event.target.parent.children[i].material.size = 7;
+                                        }
+                                    }
+                                }
+                                event.target.material.size = 10
+                                event.target.material.opacity = 1
+                                showTooltip(event);
+                            }else if(event.target.material === clickMaterial || event.target.material === focusMaterial){
+                                event.target.material.size = 10
+                                event.target.material.opacity = 1
+                                showTooltip(event);
+                            }else if(event.target.material === blurMaterial){
+                                showTooltip(event);
+                            }
                         }
                     }, false)
                     domEvents.addEventListener(point, 'mouseout', (event) => {
                         setTimeout(function (){
                             event.target.material.size = 5
+                            for ( let i = 0; i < embeddings.length; i ++ ) {
+                                if(event.target.parent.children[i] !== undefined){
+                                    event.target.parent.children[i].material.opacity = 1;
+                                    event.target.parent.children[i].material.size = 5;
+                                }
+                            }
                         }, 1000)
                         setTimeout(function (){
                             document.getElementById('sphere-tooltip').style.display = 'none';
@@ -184,6 +228,13 @@ const PanelLayout = () => {
                                 scene.children[k].material = blurMaterial;
                             }
                         }
+                        for ( let i = 0; i < material.length; i ++ ) {
+                            material[i].opacity = 1;
+                        }
+                        for ( let i = 0; i < sourceMaterial.length; i ++ ) {
+                            sourceMaterial[i].opacity = 1;
+                        }
+                        event.target.material = clickMaterial;
                         setTimeout(function (){
                             document.getElementById('sphere-tooltip').style.display = 'none';
                         }, 1500)
@@ -240,7 +291,7 @@ const PanelLayout = () => {
         tooltip.style.position = 'absolute';
         tooltip.style.overflow = 'hidden';
         tooltip.style.padding = '10px';
-        tooltip.style.background = 'rgba(0, 0, 0, 0.35)';
+        tooltip.style.background = `rgba(0, 0, 0, ${CONSTANTS.toolTipOpacity})`;
         tooltip.style.color = 'white';
         tooltip.style.maxWidth = '200px';
         tooltip.style.maxHeight = '100px';
@@ -264,20 +315,19 @@ const PanelLayout = () => {
         }
 
     }
-    const toggleSourceCategory = () => {
+    const toggleSourceCategory = (event) => {
+        setSphereSelectedOption(event.value);
         if(icon === 'source'){
-            document.getElementById('sphere-tooltip').innerText = 'Grouped By CATEGORY';
             setIcon('category');
             clearSphereSelection('category');
         }else{
-            document.getElementById('sphere-tooltip').innerText = 'Grouped By SOURCE';
             setIcon('source');
             clearSphereSelection('source');
         }
     }
     const expandPanelClickHandler = (panel) => {
-      let newPanelSpan = {one: 4,two: 4,three: 4,four: 8,five: 4};
-      if(panelSpan[panel] === 4 || panelSpan[panel] === 8 )  {
+      let newPanelSpan = {one: 4,two: 4,three: 4,four: 6,five: 6};
+      if(panelSpan[panel] === 4 || panelSpan[panel] === 8 || panelSpan[panel] === 6 )  {
           newPanelSpan[panel] = 12;
       }
       setPanelSpan(newPanelSpan);
@@ -341,20 +391,15 @@ const PanelLayout = () => {
                     xxl={{ span: panelSpan['one'], order: panelOrder['one'] }}
                     style={{ minHeight: "50vh", backgroundColor: "#f7f7f7", border: "1px solid" }} >
                     <Row>
-                        <Col xs={10} lg={10} xl={10} style={{ padding: 0 }}>
-                            <h1>Sphere</h1>
-
+                        <Col xs={5} lg={5} xl={5} style={{ paddingTop : '10px' }}>
+                            <Select style={{width: '100px' }} id='sphere-select-value'
+                                    value={sphereSelectOptions.filter(option => option.value === sphereSelectedOption)}
+                                    styles={customStyles} options={sphereSelectOptions} onChange={(event) => toggleSourceCategory(event)}  />
                         </Col>
-                        <Col xs={1} lg={1} xl={1} style={{ padding: 0 }}>
-                            <Button id="toggle" variant="light" style={{ padding: 0 }}
-                                    onMouseEnter={(event) => onSphereButtonMouseEnter(event)}
-                                    onMouseLeave={(event) => onSphereButtonMouseLeave(event)}
-                                    onClick={() => toggleSourceCategory()} >
-                                {inside_button}
-                                <p id="icon-value" style={{display: 'none'}}>{icon}</p>
-                            </Button>
+                        <Col xs={6} lg={6} xl={6} style={{ paddingTop : '10px', opacity: 0.5 }}>
+                            <CgController style={{ fontSize: "2rem" }} /> W,S; A,D; Q,E;
                         </Col>
-                        <Col xs={1} lg={1} xl={1} style={{ padding: 0 }}>
+                        <Col xs={1} lg={1} xl={1} style={{ padding: '10px' }}>
                             <Button variant="light" style={{ padding: 0 }} onClick={() => clearSphereSelection(icon)} >
                                 <AiOutlineUndo style={{ fontSize: "2rem" }}></AiOutlineUndo>
                             </Button>
@@ -375,10 +420,80 @@ const PanelLayout = () => {
                     style={{ minHeight: "50vh", backgroundColor: "#f7f7f7", border: "1px solid" }} >
                     <Row>
                         <Col xs={11} lg={11} xl={11} style={{ padding: 0 }}>
+                            <h1>Bee Swarm <ClipLoader color={'#9013FE'} loading={beeSwarmloading} size={30} /></h1>
+                        </Col>
+                        <Col xs={1} lg={1} xl={1} style={{ padding: 0 }}>
+                            <Button variant="light" style={{ padding: 0, opacity: beeSwarmOpacity }}
+                                    onMouseEnter={e => {
+                                        setBeeSwarmOpacity(1);
+                                    }}
+                                    onMouseLeave={e => {
+                                        setBeeSwarmOpacity(0.1);
+                                    }}
+                                    onClick={() => expandPanelClickHandler('two')}>
+                                <AiOutlineExpandAlt style={{ fontSize: "2rem" }}></AiOutlineExpandAlt>
+                            </Button>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col xs={12} lg={12} xl={12} style={{ padding: 0, height: '50vh', overflowX: 'scroll' }}>
+                            <BeeSwarm taskNeighbours={taskNeighbours} task={task} toggleLoading={setBeeSwarmloading} />
+                        </Col>
+                    </Row>
+                </Col>
+                <Col
+                    xs ={{ span: panelSpan['three'], order: panelOrder['three'] }}
+                    sm ={{ span: panelSpan['three'], order: panelOrder['three'] }}
+                    md ={{ span: panelSpan['three'], order: panelOrder['three'] }}
+                    lg ={{ span: panelSpan['three'], order: panelOrder['three'] }}
+                    xl ={{ span: panelSpan['three'], order: panelOrder['three'] }}
+                    xxl={{ span: panelSpan['three'], order: panelOrder['three'] }}
+                    style={{ minHeight: "50vh", backgroundColor: "#f7f7f7", border: "1px solid" }} >
+                    <Row>
+                        <Col xs={11} lg={11} xl={11} style={{ padding: 0 }}>
+                            <h1>Chord <ClipLoader color={'#9013FE'} loading={chordloading} size={30} /></h1>
+                        </Col>
+                        <Col xs={1} lg={1} xl={1} style={{ padding: 0 }}>
+                            <Button variant="light" style={{ padding: 0, opacity: chordOpacity }}
+                                    onMouseEnter={e => {
+                                        setChordOpacity(1);
+                                    }}
+                                    onMouseLeave={e => {
+                                        setChordOpacity(0.1);
+                                    }}
+                                    onClick={() => expandPanelClickHandler('three')}>
+                                <AiOutlineExpandAlt style={{ fontSize: "2rem" }}></AiOutlineExpandAlt>
+                            </Button>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col xs={12} lg={12} xl={12} style={{ padding: 0, height: '50vh' }}>
+                            <Chord taskNeighbours={taskNeighbours} task={task} toggleLoading={setChordloading} />
+                        </Col>
+                    </Row>
+                </Col>
+
+                <Col
+                    xs ={{ span: panelSpan['four'], order: panelOrder['four'] }}
+                    sm ={{ span: panelSpan['four'], order: panelOrder['four'] }}
+                    md ={{ span: panelSpan['four'], order: panelOrder['four'] }}
+                    lg ={{ span: panelSpan['four'], order: panelOrder['four'] }}
+                    xl ={{ span: panelSpan['four'], order: panelOrder['four'] }}
+                    xxl={{ span: panelSpan['four'], order: panelOrder['four'] }}
+                    style={{ minHeight: "50vh", backgroundColor: "#f7f7f7", border: "1px solid" }} >
+                    <Row>
+                        <Col xs={11} lg={11} xl={11} style={{ padding: 0 }}>
                             <h1>Network Graph <ClipLoader color={'#9013FE'} loading={netWorkloading} size={30} /></h1>
                         </Col>
                         <Col xs={1} lg={1} xl={1} style={{ padding: 0 }}>
-                            <Button variant="light" style={{ padding: 0 }} onClick={() => expandPanelClickHandler('two')} >
+                            <Button variant="light" style={{ padding: 0, opacity: networkGraphOpacity }}
+                                    onMouseEnter={e => {
+                                        setNetworkGraphOpacity(1);
+                                    }}
+                                    onMouseLeave={e => {
+                                        setNetworkGraphOpacity(0.1);
+                                    }}
+                                    onClick={() => expandPanelClickHandler('four')} >
                                 <AiOutlineExpandAlt style={{ fontSize: "2rem" }}></AiOutlineExpandAlt>
                             </Button>
                         </Col>
@@ -390,12 +505,12 @@ const PanelLayout = () => {
                     </Row>
                 </Col>
                 <Col
-                    xs ={{ span: panelSpan['three'], order: panelOrder['three'] }}
-                    sm ={{ span: panelSpan['three'], order: panelOrder['three'] }}
-                    md ={{ span: panelSpan['three'], order: panelOrder['three'] }}
-                    lg ={{ span: panelSpan['three'], order: panelOrder['three'] }}
-                    xl ={{ span: panelSpan['three'], order: panelOrder['three'] }}
-                    xxl={{ span: panelSpan['three'], order: panelOrder['three'] }}
+                    xs ={{ span: panelSpan['five'], order: panelOrder['five'] }}
+                    sm ={{ span: panelSpan['five'], order: panelOrder['five'] }}
+                    md ={{ span: panelSpan['five'], order: panelOrder['five'] }}
+                    lg ={{ span: panelSpan['five'], order: panelOrder['five'] }}
+                    xl ={{ span: panelSpan['five'], order: panelOrder['five'] }}
+                    xxl={{ span: panelSpan['five'], order: panelOrder['five'] }}
                     style={{ minHeight: "50vh", backgroundColor: "#f7f7f7", border: "1px solid" }} >
                     <Row>
                         <Col xs={4} lg={4} xl={4} style={{ padding: 0 }}>
@@ -415,7 +530,14 @@ const PanelLayout = () => {
                                     styles={customStyles} options={biasSelectOptions} onChange={(event) => handleBiasSelectChange(event)}  />
                         </Col>
                         <Col xs={1} lg={1} xl={1} style={{ paddingTop : '10px' }}>
-                            <Button variant="light" style={{ padding: 0 }} onClick={() => expandPanelClickHandler('three')} >
+                            <Button variant="light" style={{ padding: 0, opacity: biasOpacity }}
+                                    onMouseEnter={e => {
+                                        setBiasOpacity(1);
+                                    }}
+                                    onMouseLeave={e => {
+                                        setBiasOpacity(0.1);
+                                    }}
+                                    onClick={() => expandPanelClickHandler('five')} >
                                 <AiOutlineExpandAlt style={{ fontSize: "2rem" }}></AiOutlineExpandAlt>
                             </Button>
                         </Col>
@@ -424,54 +546,6 @@ const PanelLayout = () => {
                     <Row>
                         <Col xs={12} lg={12} xl={12} style={{ padding: 0, height: '50vh' }}>
                             <BiasPanel biasRefresh={biasRefresh} toggleRefresh={setBiasRefresh} biasSelectedOption = {biasSelectedOption} task={task} toggleLoading={setBiasLoading} />
-                        </Col>
-                    </Row>
-                </Col>
-                <Col
-                    xs ={{ span: panelSpan['four'], order: panelOrder['four'] }}
-                    sm ={{ span: panelSpan['four'], order: panelOrder['four'] }}
-                    md ={{ span: panelSpan['four'], order: panelOrder['four'] }}
-                    lg ={{ span: panelSpan['four'], order: panelOrder['four'] }}
-                    xl ={{ span: panelSpan['four'], order: panelOrder['four'] }}
-                    xxl={{ span: panelSpan['four'], order: panelOrder['four'] }}
-                    style={{ minHeight: "50vh", backgroundColor: "#f7f7f7", border: "1px solid" }} >
-                    <Row>
-                        <Col xs={11} lg={11} xl={11} style={{ padding: 0 }}>
-                            <h1>Bee Swarm <ClipLoader color={'#9013FE'} loading={beeSwarmloading} size={30} /></h1>
-                        </Col>
-                        <Col xs={1} lg={1} xl={1} style={{ padding: 0 }}>
-                            <Button variant="light" style={{ padding: 0 }} onClick={() => expandPanelClickHandler('four')}>
-                                <AiOutlineExpandAlt style={{ fontSize: "2rem" }}></AiOutlineExpandAlt>
-                            </Button>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col xs={12} lg={12} xl={12} style={{ padding: 0, height: '50vh' }}>
-                            <BeeSwarm taskNeighbours={taskNeighbours} task={task} toggleLoading={setBeeSwarmloading} />
-                        </Col>
-                    </Row>
-                </Col>
-                <Col
-                    xs ={{ span: panelSpan['five'], order: panelOrder['five'] }}
-                    sm ={{ span: panelSpan['five'], order: panelOrder['five'] }}
-                    md ={{ span: panelSpan['five'], order: panelOrder['five'] }}
-                    lg ={{ span: panelSpan['five'], order: panelOrder['five'] }}
-                    xl ={{ span: panelSpan['five'], order: panelOrder['five'] }}
-                    xxl={{ span: panelSpan['five'], order: panelOrder['five'] }}
-                    style={{ minHeight: "50vh", backgroundColor: "#f7f7f7", border: "1px solid" }} >
-                    <Row>
-                        <Col xs={11} lg={11} xl={11} style={{ padding: 0 }}>
-                            <h1>Chord <ClipLoader color={'#9013FE'} loading={chordloading} size={30} /></h1>
-                        </Col>
-                        <Col xs={1} lg={1} xl={1} style={{ padding: 0 }}>
-                            <Button variant="light" style={{ padding: 0 }} onClick={() => expandPanelClickHandler('five')}>
-                                <AiOutlineExpandAlt style={{ fontSize: "2rem" }}></AiOutlineExpandAlt>
-                            </Button>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col xs={12} lg={12} xl={12} style={{ padding: 0, height: '50vh' }}>
-                            <Chord taskNeighbours={taskNeighbours} task={task} toggleLoading={setChordloading} />
                         </Col>
                     </Row>
                 </Col>

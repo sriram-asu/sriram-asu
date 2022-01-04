@@ -221,6 +221,7 @@ def swarm_plot():
     response = []
     for document in documents:
         document['_id'] = str(document['_id'])
+        document['id'] = 'task_' + str(document['id'])[2:]
         response.append(document)
     return json.dumps(response)
 
@@ -243,6 +244,8 @@ def heatmap(task_id):
     response = []
     temp = calculate_heat(task_id)
     for key in temp:
+        temp[key]['group'] = 'task_' + str(temp[key]['group'])[2:]
+        temp[key]['variable'] = 'task_' + str(temp[key]['variable'])[2:]
         response.append(temp[key])
     return json.dumps(response)
 

@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import * as d3 from 'd3';
 import embeddings from "./embeddings";
+import CONSTANTS from "./constants";
 
 const BeeSwarm = (props) => {
     const svgRef = useRef();
@@ -13,7 +14,6 @@ const BeeSwarm = (props) => {
                 .then(response => response.json())
                 .then(result => {
                     props.toggleLoading(false);
-                    console.log(result)
                     setData(result);
                 });
           
@@ -23,7 +23,7 @@ const BeeSwarm = (props) => {
 
         const svg = d3.select(svgRef.current);
             let sectors = Array.from(new Set(data.map((d) => d.id)));
-            let xCoords = sectors.map((d, i) => 150 + i * 110);
+            let xCoords = sectors.map((d, i) => 75 + i * 110);
             let xScale = d3.scaleOrdinal().domain(sectors).range(xCoords);
 
             let yScale = d3
@@ -34,13 +34,14 @@ const BeeSwarm = (props) => {
             let color = d3.scaleOrdinal().domain(sectors).range(d3.schemePaired);
             let Domain = d3.extent(data.map((d) => d["accuracy"]));
             Domain = Domain.map((d) => d);
-            let size = d3.scaleLinear().domain(Domain).range([3, 20]);
+            let size = d3.scaleLinear().domain(Domain).range([3, 15]);
 
   const xAxis = d3.axisBottom()
         .scale(xScale)
         .tickPadding(5);
 
     const xAxisG = svg.append('g')
+        .style("font-size", `1rem`)
           .attr('transform', `translate(0, 400)`);
         svg
             .selectAll(".circ")
@@ -63,12 +64,12 @@ const BeeSwarm = (props) => {
                 tooltip.style.position = 'absolute';
                 tooltip.style.overflow = 'hidden';
                 tooltip.style.padding = '10px';
-                tooltip.style.background = 'rgba(0, 0, 0, 0.35)';
+                tooltip.style.background = `rgba(0, 0, 0, ${CONSTANTS.toolTipOpacity})`;
                 tooltip.style.color = 'white';
                 tooltip.style.maxWidth = '200px';
                 tooltip.style.maxHeight = '100px';
                 tooltip.style.border = '1px solid black';
-                tooltip.innerText = d.accuracy;
+                tooltip.innerText = d.accuracy.toFixed(3);
                 d3.select(event.currentTarget).style("opacity", 0.8);
             })
             .on("mouseleave", (event) =>{
@@ -114,7 +115,6 @@ const BeeSwarm = (props) => {
             }
 
             let init_decay = setTimeout(function () {
-                console.log("start alpha decay");
                 simulation.alphaDecay(0.1);
             }, 3000);
        
@@ -122,7 +122,7 @@ const BeeSwarm = (props) => {
 
     return (
         <React.Fragment>
-            <svg ref={svgRef} style={{ width: '100%', height: '95%'}}>
+            <svg ref={svgRef} style={{ width: '1200px', height: '95%'}}>
             </svg>
         </React.Fragment>
     );

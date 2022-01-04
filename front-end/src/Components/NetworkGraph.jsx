@@ -107,7 +107,7 @@ const NetworkGraph = (props) => {
                 <textarea style={{width: '90%', height: '100px'}} value={selectedTaskDefinition} readOnly={true}>
             </textarea>
                 <br/><br/><br/>
-                <label> Focused Task : <b> {focusedTaskDefinition.strength} </b> </label>
+                <label> Focused Task : <b> {focusedTaskDefinition.strength.toFixed(3)} </b>  ( Sentence Similarity Score ) </label>
                 <br/>
                 <textarea style={{width: '90%', height: '100px'}} value={focusedTaskDefinition.definition} readOnly={true}>
             </textarea>

@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { select, scaleBand, scaleLinear, axisBottom, axisLeft, scaleSequential, interpolateBuPu } from 'd3';
 import * as d3 from 'd3';
+import CONSTANTS from "./constants";
 
 const BiasPanel = (props) => {
     const svgRef = useRef();
@@ -84,17 +85,19 @@ const BiasPanel = (props) => {
         if(data.length !== 0){
             const svg = select(svgRef.current);
             svg.selectAll("*").remove();
-            const xScale = scaleBand().domain(data.map(d =>  d.key)).range([30,svgRef.current.clientWidth-50]).padding(0.25);
+            const xScale = scaleBand().domain(data.map(d =>  d.key)).range([40,svgRef.current.clientWidth-50]).padding(0.25);
             const xAxis = axisBottom(xScale).ticks(data.length);
             svg.append("g")
                 .style("transform", `translateY(${svgRef.current.clientHeight-20}px)`)
+                .style("font-size", `1rem`)
                 .call(xAxis);
             const yScale = scaleLinear()
                 .domain([0, yMax])
                 .range([svgRef.current.clientHeight-20, 20]);
             const yAxis = axisLeft(yScale).ticks(data.length);
             svg.append("g")
-                .style("transform", `translateX(${30}px)`)
+                .style("transform", `translateX(${40}px)`)
+                .style("font-size", `1rem`)
                 .call(yAxis);
             let colourScale = scaleSequential().domain([-yMax, yMax]).interpolator(interpolateBuPu);
             svg.selectAll(".bar")
@@ -115,12 +118,12 @@ const BiasPanel = (props) => {
                     tooltip.style.position = 'absolute';
                     tooltip.style.overflow = 'hidden';
                     tooltip.style.padding = '10px';
-                    tooltip.style.background = 'rgba(0, 0, 0, 0.35)';
+                    tooltip.style.background = `rgba(0, 0, 0, ${CONSTANTS.toolTipOpacity})`;
                     tooltip.style.color = 'white';
                     tooltip.style.maxWidth = '200px';
                     tooltip.style.maxHeight = '100px';
                     tooltip.style.border = '1px solid black';
-                    tooltip.innerText = d.value;
+                    tooltip.innerText = d.value.toFixed(3);
                     d3.select(event.currentTarget).style("opacity", 0.8);
                 })
                 .on("mouseout", (event, d)=>{
@@ -145,19 +148,21 @@ const BiasPanel = (props) => {
         if(Object.keys(boxPlotData).length !== 0 && boxPlotData['positive'].length !== 0){
             const svg = select(svgRef.current);
             svg.selectAll("*").remove();
-            const xScale = scaleBand().domain(['positive', 'negative']).range([50,svgRef.current.clientWidth-50]);
+            const xScale = scaleBand().domain(['positive', 'negative']).range([55,svgRef.current.clientWidth-50]);
             const xAxis = axisBottom(xScale).ticks(2);
             svg.append("g")
-                .style("transform", `translateY(${svgRef.current.clientHeight-20}px)`)
+                .style("transform", `translateY(${svgRef.current.clientHeight-25}px)`)
+                .style("font-size", `1rem`)
                 .call(xAxis);
             const yScaleMin = Math.min(boxPlotData['positive_min'],boxPlotData['negative_min'])
             const yScaleMax = Math.max(boxPlotData['positive_max'],boxPlotData['negative_max'])
             const yScale = scaleLinear()
                 .domain([yScaleMin - (yScaleMax-yScaleMin)/10,yScaleMax + (yScaleMax-yScaleMin)/10])
-                .range([svgRef.current.clientHeight-20, 20]);
+                .range([svgRef.current.clientHeight-25, 20]);
             const yAxis = axisLeft(yScale);
             svg.append("g")
-                .style("transform", `translateX(${50}px)`)
+                .style("transform", `translateX(${55}px)`)
+                .style("font-size", `1rem`)
                 .call(yAxis);
 
             let data_unsorted = boxPlotData['positive'].map(d =>  ({ value : d.value, instance_name: d.instance_name }))
@@ -168,7 +173,7 @@ const BiasPanel = (props) => {
             let min = boxPlotData['positive_min']
             let max = boxPlotData['positive_max']
 
-            let positive_center = xScale('positive') + 133;
+            let positive_center = xScale('positive') + 211.25;
             var box_width = 100
 
             svg
@@ -209,7 +214,7 @@ const BiasPanel = (props) => {
             let min_2 = boxPlotData['negative_min']
             let max_2 = boxPlotData['negative_max']
 
-            let negative_center = xScale('negative') + 133;
+            let negative_center = xScale('negative') + 211.25;
 
             svg
                 .append("line")
@@ -281,12 +286,12 @@ const BiasPanel = (props) => {
                     tooltip.style.position = 'absolute';
                     tooltip.style.overflow = 'hidden';
                     tooltip.style.padding = '10px';
-                    tooltip.style.background = 'rgba(0, 0, 0, 0.35)';
+                    tooltip.style.background = `rgba(0, 0, 0, ${CONSTANTS.toolTipOpacity})`;
                     tooltip.style.color = 'white';
                     tooltip.style.maxWidth = '200px';
                     tooltip.style.maxHeight = '100px';
                     tooltip.style.border = '1px solid black';
-                    tooltip.innerText = d.value.toFixed(2) + " , "+d.instance_name;
+                    tooltip.innerText = d.value.toFixed(3) + " , "+d.instance_name;
                     d3.select(event.currentTarget).style("opacity", 0.8);
                 })
                 .on("mouseleave", (event) =>{
@@ -301,10 +306,11 @@ const BiasPanel = (props) => {
             const svg = select(svgRef.current);
             svg.selectAll("*").remove();
 
-            const xScale = scaleBand().domain(heatMapData.map(d =>  d.group)).range([30,svgRef.current.clientWidth-50]).padding(0.05);
+            const xScale = scaleBand().domain(heatMapData.map(d =>  d.group)).range([75,svgRef.current.clientWidth-50]).padding(0.05);
             const xAxis = axisBottom(xScale).ticks(data.length);
             svg.append("g")
                 .style("transform", `translateY(${svgRef.current.clientHeight-20}px)`)
+                .style("font-size", `1rem`)
                 .call(xAxis);
             const yScale = scaleBand()
                 .domain(heatMapData.map(d =>  d.variable))
@@ -312,7 +318,8 @@ const BiasPanel = (props) => {
                 .padding(0.05);
             const yAxis = axisLeft(yScale).ticks(data.length);
             svg.append("g")
-                .style("transform", `translateX(${30}px)`)
+                .style("transform", `translateX(${75}px)`)
+                .style("font-size", `1rem`)
                 .call(yAxis);
 
             var myColor = d3.scaleSequential()
@@ -342,12 +349,12 @@ const BiasPanel = (props) => {
                     tooltip.style.position = 'absolute';
                     tooltip.style.overflow = 'hidden';
                     tooltip.style.padding = '10px';
-                    tooltip.style.background = 'rgba(0, 0, 0, 0.35)';
+                    tooltip.style.background = `rgba(0, 0, 0, ${CONSTANTS.toolTipOpacity})`;
                     tooltip.style.color = 'white';
                     tooltip.style.maxWidth = '200px';
                     tooltip.style.maxHeight = '100px';
                     tooltip.style.border = '1px solid black';
-                    tooltip.innerText = d.value;
+                    tooltip.innerText = parseFloat(d.value).toFixed(3);
                     d3.select(event.currentTarget).style("opacity", 0.8);
                 })
                 .on("mouseleave", (event) =>{
