@@ -9,6 +9,9 @@ import { SiCrowdsource } from "react-icons/si";
 import { MdCategory } from "react-icons/md";
 import { RiQuestionnaireLine } from "react-icons/ri";
 import { CgController } from "react-icons/cg";
+import { ImCross } from "react-icons/im";
+import { BsReverseLayoutTextSidebarReverse } from "react-icons/bs";
+import { BiRectangle } from "react-icons/bi";
 import THREEx from "./threex.domevents";
 import embeddings from "./embeddings";
 import * as THREE from 'three';
@@ -22,9 +25,10 @@ import InputGroup from 'react-bootstrap/InputGroup'
 import FormControl from 'react-bootstrap/FormControl'
 import Chord from "./Chord";
 import CONSTANTS from "./constants";
+import SlidingPanel from 'react-sliding-side-panel';
 
 const PanelLayout = () => {
-
+    const [sphereLegendPanel, setSphereLegendPanel] = useState(false);
     const [panelOrder, setPanelOrder] = useState({one: 0,two: 1,three: 2,four: 3,five: 4});
     const [panelSpan, setPanelSpan] = useState({one: 4,two: 4,three: 4,four: 6,five: 6});
     const [biasloading, setBiasLoading] = useState(false);
@@ -44,6 +48,9 @@ const PanelLayout = () => {
     const [chordOpacity, setChordOpacity] = useState(0.1);
     const [biasOpacity, setBiasOpacity] = useState(0.1);
     const [networkGraphOpacity, setNetworkGraphOpacity] = useState(0.1);
+    const [source_map, setSource_map] = useState({});
+    const [category_map, setCategory_map] = useState({});
+
     const [biasSelectOptions, setBiasSelectOptions] = useState([
             { value: 't1', label: 'Unique Vocabulary' },
             { value: 't2', label: 'Sentence Lengths' },
@@ -95,6 +102,11 @@ const PanelLayout = () => {
 
     let camera, renderer, canvas, material, sourceMaterial, scene = '', focusMaterial, blurMaterial, clickMaterial, neighbours=[];
     let inside_button;
+    let category_colour = d3.scaleSequential().domain([1,115])
+        .interpolator(d3.interpolateRainbow);
+    let source_colour = d3.scaleSequential().domain([1,414])
+        .interpolator(d3.interpolateRainbow);
+
 
     const showTooltip = (event ) => {
         let x = event.origDomEvent.clientX,
@@ -133,6 +145,8 @@ const PanelLayout = () => {
                     .interpolator(d3.interpolateRainbow);
                 let source_colour = d3.scaleSequential().domain([1,414])
                     .interpolator(d3.interpolateRainbow);
+                let source_map = {};
+                let category_map = {};
                 renderer = new THREE.WebGLRenderer( { canvas, antialias: true } );
                 renderer.setPixelRatio( window.devicePixelRatio );
                 renderer.setSize( canvas.width, canvas.height );
@@ -142,6 +156,8 @@ const PanelLayout = () => {
                 for ( let i = 0; i < embeddings.length; i ++ ) {
                     material.push(new THREE.PointsMaterial( { opacity: 1,size: 5, map: createCircleTexture(category_colour(embeddings[i]["category_number"]), 256), transparent: true, depthWrite: false}));
                     sourceMaterial.push(new THREE.PointsMaterial( { opacity: 1,size: 5, map: createCircleTexture(source_colour(embeddings[i]["source_number"]), 256), transparent: true, depthWrite: false}));
+                    category_map[embeddings[i]["category_number"]] = embeddings[i]["category"]
+                    source_map[embeddings[i]["source_number"]] = embeddings[i]["source"]
                     const geometry = new THREE.BufferGeometry();
                     const vertices = [];
                     const vertex = new THREE.Vector3();
@@ -243,6 +259,8 @@ const PanelLayout = () => {
                 setCurrentScene(scene);
                 setAllCategoryMaterials(material);
                 setAllSourceMaterials(sourceMaterial);
+                setSource_map(source_map);
+                setCategory_map(category_map);
             }
         }
     const onkeydown = (event) => {
@@ -389,14 +407,69 @@ const PanelLayout = () => {
                     lg ={{ span: panelSpan['one'], order: panelOrder['one'] }}
                     xl ={{ span: panelSpan['one'], order: panelOrder['one'] }}
                     xxl={{ span: panelSpan['one'], order: panelOrder['one'] }}
-                    style={{ minHeight: "50vh", backgroundColor: "#f7f7f7", border: "1px solid" }} >
-                    <Row>
+                    style={{ minHeight: "50vh", maxHeight: "58vh", backgroundColor: "#f7f7f7", border: "1px solid" }} >
+                    <SlidingPanel
+                        type={'left'}
+                        isOpen={sphereLegendPanel}
+                        size={140}
+                        style={{ maxHeight: "50vh", backgroundColor: "#f7f7f7", border: "1px solid", display: sphereLegendPanel? "block":"none" }}
+                    >
+                        <Row>
+                            <Col xs={10} lg={10} xl={10} style={{ padding: '10px' }}>
+                                <h3> {icon === 'category' ? 'Category' : 'Source' } Legend</h3>
+                            </Col>
+                            <Col xs={2} lg={2} xl={2} style={{ padding: '10px' }}>
+                                <Button variant="light" style={{ padding: 0 }} onClick={() => setSphereLegendPanel(false)} >
+                                    <ImCross style={{ fontSize: "1rem" }}></ImCross>
+                                </Button>
+                            </Col>
+
+                        </Row>
+                        <Row
+                            style={{ display: icon === 'category'? "block":"none", overflowX: 'scroll',overflowY: 'scroll',maxWidth: '32vw', maxHeight: "50vh", backgroundColor: "#f7f7f7"}}
+                        >
+                            {Object.keys(category_map).map((key) =>
+                                <Col key={key} xs={12} lg={12} xl={12} style={{ padding: '10px' }}>
+                                    &nbsp;
+                                    &nbsp;
+                                    <BiRectangle style={{ fontSize: "1rem",
+                                        color:  category_colour(key),
+                                        backgroundColor: category_colour(key)
+                                    }} />
+                                    <label style={{fontSize: "1rem"}}> &nbsp;&nbsp;&nbsp;{category_map[key] } </label>
+                                </Col>
+                            )}
+                        </Row>
+
+                        <Row
+                            style={{ display: icon === 'source'? "block":"none", overflowX: 'scroll',overflowY: 'scroll',maxWidth: '32vw', maxHeight: "50vh", backgroundColor: "#f7f7f7"}}
+                        >
+                            {Object.keys(source_map).map((key) =>
+                                <Col key={key} xs={12} lg={12} xl={12} style={{ padding: '10px' }}>
+                                    &nbsp;&nbsp;
+                                    <BiRectangle style={{ fontSize: "1rem",
+                                        color:  source_colour(key),
+                                        backgroundColor: source_colour(key)
+                                    }} />
+                                    <label style={{fontSize: "1rem"}}> &nbsp;&nbsp;&nbsp;{source_map[key] } </label>
+                                </Col>
+                            )}
+                        </Row>
+
+
+                    </SlidingPanel>
+                    <Row  style={{ display: !sphereLegendPanel? "flex":"none" }}>
+                        <Col xs={1} lg={1} xl={1} style={{ padding: '10px' }}>
+                            <Button variant="light" style={{ padding: 0 }} onClick={() => setSphereLegendPanel(true)} >
+                                <BsReverseLayoutTextSidebarReverse style={{ fontSize: "2rem" }}></BsReverseLayoutTextSidebarReverse>
+                            </Button>
+                        </Col>
                         <Col xs={5} lg={5} xl={5} style={{ paddingTop : '10px' }}>
                             <Select style={{width: '100px' }} id='sphere-select-value'
                                     value={sphereSelectOptions.filter(option => option.value === sphereSelectedOption)}
                                     styles={customStyles} options={sphereSelectOptions} onChange={(event) => toggleSourceCategory(event)}  />
                         </Col>
-                        <Col xs={6} lg={6} xl={6} style={{ paddingTop : '10px', opacity: 0.5 }}>
+                        <Col xs={5} lg={5} xl={5} style={{ paddingTop : '10px', opacity: 0.5 }}>
                             <CgController style={{ fontSize: "2rem" }} /> W,S; A,D; Q,E;
                         </Col>
                         <Col xs={1} lg={1} xl={1} style={{ padding: '10px' }}>
