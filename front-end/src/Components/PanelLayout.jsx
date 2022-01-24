@@ -493,7 +493,7 @@ const PanelLayout = () => {
                     style={{ minHeight: "50vh", backgroundColor: "#f7f7f7", border: "1px solid" }} >
                     <Row>
                         <Col xs={11} lg={11} xl={11} style={{ padding: 0 }}>
-                            <h1>Bee Swarm <ClipLoader color={'#9013FE'} loading={beeSwarmloading} size={30} /></h1>
+                            <h1><ClipLoader color={'#9013FE'} loading={beeSwarmloading} size={30} /></h1>
                         </Col>
                         <Col xs={1} lg={1} xl={1} style={{ padding: 0 }}>
                             <Button variant="light" style={{ padding: 0, opacity: beeSwarmOpacity }}
@@ -524,7 +524,7 @@ const PanelLayout = () => {
                     style={{ minHeight: "50vh", backgroundColor: "#f7f7f7", border: "1px solid" }} >
                     <Row>
                         <Col xs={11} lg={11} xl={11} style={{ padding: 0 }}>
-                            <h1>Chord <ClipLoader color={'#9013FE'} loading={chordloading} size={30} /></h1>
+                            <h1><ClipLoader color={'#9013FE'} loading={chordloading} size={30} /></h1>
                         </Col>
                         <Col xs={1} lg={1} xl={1} style={{ padding: 0 }}>
                             <Button variant="light" style={{ padding: 0, opacity: chordOpacity }}
@@ -556,7 +556,7 @@ const PanelLayout = () => {
                     style={{ minHeight: "50vh", backgroundColor: "#f7f7f7", border: "1px solid" }} >
                     <Row>
                         <Col xs={11} lg={11} xl={11} style={{ padding: 0 }}>
-                            <h1>Network Graph <ClipLoader color={'#9013FE'} loading={netWorkloading} size={30} /></h1>
+                            <h1><ClipLoader color={'#9013FE'} loading={netWorkloading} size={30} /></h1>
                         </Col>
                         <Col xs={1} lg={1} xl={1} style={{ padding: 0 }}>
                             <Button variant="light" style={{ padding: 0, opacity: networkGraphOpacity }}
@@ -587,7 +587,7 @@ const PanelLayout = () => {
                     style={{ minHeight: "50vh", backgroundColor: "#f7f7f7", border: "1px solid" }} >
                     <Row>
                         <Col xs={4} lg={4} xl={4} style={{ padding: 0 }}>
-                            <h1>Bias <ClipLoader color={'#9013FE'} loading={biasloading} size={30} /> </h1>
+                            <h1><ClipLoader color={'#9013FE'} loading={biasloading} size={30} /> </h1>
                         </Col>
                         <Col xs={1} lg={1} xl={1} style={{ paddingTop : '10px' }}>
                             <Button variant="light" style={{ padding: 0 }}
