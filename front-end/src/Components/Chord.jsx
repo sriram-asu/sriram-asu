@@ -30,10 +30,12 @@ const Chord = (props) => {
             d3.select(svgRef.current).selectAll("*").remove();
 
             const index_task_id_map = {}
+            const reverse_index_task_id_map = {}
             const matrix = []
             let count = 0;
             for(const key in data){
                 index_task_id_map[count] = key;
+                reverse_index_task_id_map[key] = count;
                 count = count +1;
                 matrix.push(data[key]);
             }
@@ -66,6 +68,10 @@ const Chord = (props) => {
                 .on("click", mouseoverChord)
                 .on("mouseout", mouseoutChord);
 
+            document.addEventListener('spherePointHovered', fade(0.1,reverse_index_task_id_map), false);
+
+            document.addEventListener('spherePointUnHovered', fade(opacityDefault,{}), false);
+
             outerCircle.append("path")
                 .style("fill", function(d) { return color(d.index); })
                 .attr("id", function(d, i) { return "group" + d.index; })
@@ -89,12 +95,22 @@ const Chord = (props) => {
                 .style("opacity", opacityDefault)
                 .attr("d", ribbonPath);
 
-            function fade(opacity) {
+            function fade(opacity, reverse_index_task_id_map) {
                 return function(event,d) {
-                    svg.selectAll("path.chord")
-                        .filter(function(data) { return data.source.index !== d.index && data.target.index !== d.index; })
-                        .transition()
-                        .style("opacity", opacity);
+                    if(d === undefined){
+                        d = {index : reverse_index_task_id_map[event.detail.userData.data.id]}
+                    }
+                    if(d.index !== undefined){
+                        svg.selectAll("path.chord")
+                            .filter(function(data) { return data.source.index !== d.index && data.target.index !== d.index; })
+                            .transition()
+                            .style("opacity", opacity);
+                    }else if(opacity === opacityDefault){
+                        svg.selectAll("path.chord")
+                            .filter(function(data) { return data.source.index !== 100 && data.target.index !== 100; })
+                            .transition()
+                            .style("opacity", opacity);
+                    }
                 };
             }
             function mouseoverChord(event,d,i) {

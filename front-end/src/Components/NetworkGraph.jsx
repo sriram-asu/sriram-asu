@@ -28,6 +28,15 @@ const NetworkGraph = (props) => {
 
         let nodes = props.taskNeighbours.map(n => ({ 'id': Object.keys(n)[0], 'level': Object.keys(n)[0] === props.task ? 1 : 2 }) )
         let links = props.taskNeighbours.map(n => ({ 'target': props.task, 'source': Object.keys(n)[0], 'strength': n[Object.keys(n)[0]] }))
+
+        const reverse_index_task_id_map = {}
+        let count = 0;
+        for(const key in nodes){
+            reverse_index_task_id_map[nodes[key].id] = count;
+            count = count +1;
+        }
+
+
         let adjlist = [];
         links.forEach(function(d) {
             adjlist[d.source.index + "-" + d.target.index] = true;
@@ -59,22 +68,46 @@ const NetworkGraph = (props) => {
             .attr("fill", (d) => color(d.level))
 
         const focus = (event, d) => {
-            fetch(`/definition/${d.id}`)
-                .then(response => response.json())
-                .then(result => {
-                    const focussed= {}
-                    focussed['strength'] = linkElements._groups[0].map(d => d.__data__).map(d =>  ({ source : d.source.id, strength : d.strength } )).filter(e => e.source === d.id)[0].strength;
-                    focussed['definition'] = result[0]['definition'];
-                    setFocusedTaskDefinition(focussed);
-                })
+                fetch(`/definition/${d.id}`)
+                    .then(response => response.json())
+                    .then(result => {
+                        const focussed= {}
+                        focussed['strength'] = linkElements._groups[0].map(d => d.__data__).map(d =>  ({ source : d.source.id, strength : d.strength } )).filter(e => e.source === d.id)[0].strength;
+                        focussed['definition'] = result[0]['definition'];
+                        setFocusedTaskDefinition(focussed);
+                    })
 
-            var index = d3.select(event.target).datum().index;
-            nodeElements.style("opacity", function(o) {
-                return neigh(index, o.index) ? 1 : 0.1;
-            });
-            linkElements.style("opacity", function(o) {
-                return o.source.index === index || o.target.index === index ? 1 : 0.1;
-            });
+                var index = d3.select(event.target).datum().index;
+                nodeElements.style("opacity", function(o) {
+                    return neigh(index, o.index) ? 1 : 0.1;
+                });
+                linkElements.style("opacity", function(o) {
+                    return o.source.index === index || o.target.index === index ? 1 : 0.1;
+                });
+        }
+        const focus2 = (reverse_index_task_id_map) => {
+            return (event) => {
+                if(Object.keys(reverse_index_task_id_map).length !== 0 && reverse_index_task_id_map[event.detail.userData.data.id] !== undefined){
+                    fetch(`/definition/${event.detail.userData.data.id}`)
+                        .then(response => response.json())
+                        .then(result => {
+                            const focussed= {}
+                            focussed['strength'] = linkElements._groups[0].map(d => d.__data__).map(d =>  ({ source : d.source.id, strength : d.strength } )).filter(e => e.source === event.detail.userData.data.id)[0].strength;
+                            focussed['definition'] = result[0]['definition'];
+                            setFocusedTaskDefinition(focussed);
+                        })
+
+                    var index = reverse_index_task_id_map[event.detail.userData.data.id];
+                    nodeElements.style("opacity", function(o) {
+                        return neigh(index, o.index) ? 1 : 0.1;
+                    });
+                    linkElements.style("opacity", function(o) {
+                        return o.source.index === index || o.target.index === index ? 1 : 0.1;
+                    });
+                }
+            }
+
+
         }
         const unfocus = () => {
            nodeElements.style("opacity", 1);
@@ -82,6 +115,8 @@ const NetworkGraph = (props) => {
         }
 
         nodeElements.on("mouseover", focus).on("mouseout", unfocus);
+        document.addEventListener('spherePointHovered', focus2(reverse_index_task_id_map), false);
+        document.addEventListener('spherePointUnHovered', unfocus, false);
 
         simulation.nodes(nodes).on('tick', () => {
 

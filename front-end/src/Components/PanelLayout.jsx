@@ -179,6 +179,8 @@ const PanelLayout = () => {
                     point.updateMatrix();
                     scene.add(point);
                     domEvents.addEventListener(point, 'mouseover', (event) => {
+                        let spherePointHovered = new CustomEvent('spherePointHovered', {detail: point});
+                        document.dispatchEvent(spherePointHovered);
                         if(event.target.material === blurMaterial || event.target.material === clickMaterial || event.target.material === focusMaterial ){
                             neighbours = [];
                         }
@@ -215,6 +217,8 @@ const PanelLayout = () => {
                         }
                     }, false)
                     domEvents.addEventListener(point, 'mouseout', (event) => {
+                        let spherePointUnhovered = new CustomEvent('spherePointUnHovered', {detail: point});
+                        document.dispatchEvent(spherePointUnhovered);
                         setTimeout(function (){
                             event.target.material.size = 5
                             for ( let i = 0; i < embeddings.length; i ++ ) {

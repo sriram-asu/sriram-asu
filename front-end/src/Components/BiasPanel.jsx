@@ -141,6 +141,21 @@ const BiasPanel = (props) => {
                 })
                 .style("stroke-width", "3")
                 .attr("height",(d) => svgRef.current.clientHeight-20-yScale(d.value));
+
+            document.addEventListener('spherePointHovered', (event) =>{
+                svg.selectAll(".bar")
+                    .filter(function(data) { return data.task_id !== event.detail.userData.data.id; })
+                    .transition()
+                    .style("opacity", 0.1);
+            }, false);
+
+            document.addEventListener('spherePointUnHovered', () =>{
+                svg.selectAll(".bar")
+                    .transition()
+                    .style("opacity", 1);
+            }, false);
+
+
             props.toggleLoading(false);
         }
     },[data]);
