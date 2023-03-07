@@ -1,51 +1,11 @@
-NLP Test Bed
+<h1 align="center">Hi 👋, I'm Sriram Chandrasekaran</h1>
+An avid full stack developer with strong technical, analytical skills and an interest to solve complex challenges using simple and creative solutions. Having 3+ years of experience building web application and data models for the Travel and Invoicing team.
+<br/>
+- 🔭 I’m currently working on **innovative projects @ASU**
 
-Before running any react scripts please have latest version of node and npm installed
+<h3 align="left">Connect with me:</h3>
+<p align="left">
+</p>
 
-Steps to run the front-end
-1. cd to "front-end" module
-2. Run npm -i (this might take a few minutes)
-3. Run npm start ( this should open a development server)
-
-Before running any python scripts please run "pip install -r requirement.txt" on the \project_mentored_project_3_group-nlp-test-bed path
-
-Steps to run the back-end services
-
-1.Download the nlp task dataset
-
-2.Start a local mongo daemon
-
-3.Load these data using the scripts \back-end\Database\JsonObjToArr.py
-
-4.Load these data using the scripts \back-end\Database\database.py
-
-This should create a database called "TestDB2" and collection called "testcol"
-
-Run the \back-end\Database\sentence_embeddings.py to create the "embeddings"
-collection
-
-Run the \back-end\Database\k_closest.py to create the "k_closest"
-collection which should now have the k closest neighbours for a task.
-
-Run the \back-end\Database\writeToFile.py to create the "embedding.js"
-file in the front-end\src\Components folder ("remember to change the local path")
-
-Once this is done the sphere should load up in the UI.
-
-For the Beeswarm plot run the below command in front-end\public folder where data_beeswarm.json is present
-Please install mongoimport (MongoDB developer tools) and then run the below command
-mongoimport --jsonArray --db TestDB2 --collection testcol2 --file data_beeswarm.json
-
-Now to start the other back services.
-CD to \back-end\Api\
-Now run the app.py file to start the Flask Server.
-
-Now all the interactions and visualisations would work.
-
-To run the GPT model we need openai library. 
-The openai api key which is unique needs to be generated from openai website.
-Fetch_data function calls call_gpt function which generates the model output.
-
-To run the GPT model run the file call_gpt_updated.py in the \back-end\Api\ folder.
-
-
+<h3 align="left">Languages and Tools:</h3>
+<p align="left"> <a href="https://angular.io" target="_blank" rel="noreferrer"> <img src="https://angular.io/assets/images/logos/angular/angular.svg" alt="angular" width="40" height="40"/> </a> <a href="https://angular.io" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/angularjs/angularjs-original-wordmark.svg" alt="angularjs" width="40" height="40"/> </a> <a href="https://getbootstrap.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-plain-wordmark.svg" alt="bootstrap" width="40" height="40"/> </a> <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/> </a> <a href="https://d3js.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/d3js/d3js-original.svg" alt="d3js" width="40" height="40"/> </a> <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/> </a> <a href="https://www.java.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="java" width="40" height="40"/> </a> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> </a> <a href="https://nodejs.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="40" height="40"/> </a> <a href="https://www.python.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="40" height="40"/> </a> <a href="https://reactjs.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40"/> </a> <a href="https://spring.io/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/springio/springio-icon.svg" alt="spring" width="40" height="40"/> </a> <a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="typescript" width="40" height="40"/> </a> </p>
